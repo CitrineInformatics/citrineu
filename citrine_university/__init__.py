@@ -1,7 +1,5 @@
 from flask import Flask, g
 from flask_sqlalchemy import SQLAlchemy
-from citrine_university.admin.app import admin
-from citrine_university.api.v1.app import api
 
 # Globally accessible libraries
 db = SQLAlchemy()
@@ -9,13 +7,13 @@ db = SQLAlchemy()
 def create_app():
     """Initialize the core application."""
     app = Flask(__name__, instance_relative_config=False)
-    db.init_app(app)
-
     app.config.from_object('config.Config')
 
+    db.init_app(app)
+
     with app.app_context():
-        # Include our Routes
-        #from . import routes
+        from citrine_university.admin.app import admin
+        from citrine_university.api.app import api
         
         # Register Blueprints
         app.register_blueprint(admin, url_prefix='/admin')

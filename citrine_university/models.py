@@ -56,13 +56,26 @@ class Track(db.Model):
         db.String(255),
         index=False,
         unique=False,
-        nullable=False)
+        nullable=True)
     
     resources = db.Column(
         db.String(255),
         index=False,
         unique=False,
-        nullable=False)
+        default="No Resources",
+        nullable=True)
+    
+    def __repr__(self):
+        return '<{}>'.format(self.name)
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'resources': self.resources.split(','),
+        }
+
     
 
 class Resource(db.Model):
@@ -86,31 +99,56 @@ class Resource(db.Model):
         db.String(255),
         index=False,
         unique=False,
-        nullable=False)
+        nullable=True)
     
     tracks = db.Column(
         db.String(255),
         index=False,
         unique=False,
-        nullable=False)
+        default="No tracks",
+        nullable=True)
 
     sections = db.Column(
         db.String(255),
         index=False,
         unique=False,
+        default="No sections",
         nullable=True)
     
     steps = db.Column(
         db.String(255),
         index=False,
         unique=False,
-        nullable=False)
+        default="No steps",
+        nullable=True)
         
     resource_type = db.Column(
         db.String(64),
         index=False,
         unique=False,
-        nullable=False)
+        nullable=True)
+
+    topics = db.Column(
+        db.String(),
+        index=False,
+        unique=False,
+        default="General",
+        nullable=True)
+
+    def __repr__(self):
+        return '<{}>'.format(self.name)
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'tracks': self.tracks.split(','),
+            'sections': self.sections.split(','),
+            'steps': self.steps.split(','),
+            'resource_type': self.resource_type,
+            'topics': self.topics.split(',')
+        }
 
 class Section(db.Model):
     """

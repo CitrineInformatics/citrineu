@@ -1,4 +1,8 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, make_response, jsonify
+from flask import current_app as app
+from ..models import db, User, Track, Resource, Section, Step
+
+
 api = Blueprint('api', __name__)
 
 @api.route("/v1/")
@@ -42,26 +46,40 @@ def delete_user(user_id):
     return "User deleted"
 
 
-
+# TRACKS
 @api.route("/v1/tracks", methods=['POST'])
 def create_track():
     '''
     Creates new track
     '''
-    return "track created"
+   
+    name = request.args.get('name')
+    description = request.args.get('description')
+
+    track = Track(
+        name=name,
+        description=description)  
+    
+    db.session.add(track)  
+    db.session.commit()
+
+    return make_response(f"{track} successfully created with!")
 
 @api.route("/v1/tracks", methods=['GET'])
 def read_tracks():
     '''
     Reads all tracks
     '''
-    return "Here are all tracks"
+
+    tracks = Track.query.all()
+    return jsonify(tracks = [track.serialize() for track in tracks])
 
 @api.route("/v1/tracks/<track_id>", methods=['PUT'])
 def update_track(track_id):
     '''
     Updates given track
     '''
+    
     return "Updated track"
 
 @api.route("/v1/tracks/<track_id>", methods=['GET'])
@@ -79,20 +97,43 @@ def delete_track(track_id):
     return "track deleted"
 
 
-
+# Resources
 @api.route("/v1/resources", methods=['POST'])
 def create_resource():
     '''
     Creates new resource
     '''
-    return "resource created"
+
+    name = request.args.get('name')
+    description = request.args.get('description')
+    resource_type = request.args.get('resource_type')
+
+    resource = Resource(
+        name=name,
+        description=description,
+        resource_type=resource_type)  
+    
+    db.session.add(resource)  
+    db.session.commit()
+
+    return make_response(f"{resource} successfully created!")
+
 
 @api.route("/v1/resources", methods=['GET'])
 def read_resources():
     '''
     Reads all resources
     '''
-    return "Here are all resources"
+    resources = Resource.query.all()
+    return jsonify(resources = [resource.serialize() for resource in resources])
+
+@api.route("/v1/resources/type/<resource_type>", methods=['GET'])
+def read_resources_by_type(resource_type):
+    '''
+    Gets resources by type
+    '''
+    resources = Resource.query.filter_by(resource_type = resource_type)
+    return jsonify(resources = [resource.serialize() for resource in resources])
 
 @api.route("/v1/resources/<resource_id>", methods=['PUT'])
 def update_resource(resource_id):
@@ -106,7 +147,8 @@ def read_resource(resource_id):
     '''
     Reads given resource
     '''
-    return "Here is a resource"
+    resources = Resource.query.filter_by(id = resource_id)
+    return jsonify(resources = [resource.serialize() for resource in resources])
 
 @api.route("/v1/resources/<resource_id>", methods=['DELETE'])
 def delete_resource(resource_id):
@@ -116,7 +158,7 @@ def delete_resource(resource_id):
     return "resource deleted"
 
 
-
+# SECTIONS
 @api.route("/v1/sections", methods=['POST'])
 def create_section():
     '''
@@ -153,7 +195,7 @@ def delete_section(section_id):
     return "section deleted"
 
 
-
+# STEPS
 @api.route("/v1/steps", methods=['POST'])
 def create_step():
     '''
