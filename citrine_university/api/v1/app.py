@@ -5,6 +5,7 @@ api = Blueprint('api', __name__)
 def index():
     return "hello api"
 
+
 @api.route("/v1/users", methods=['POST'])
 def create_user():
     '''
@@ -79,40 +80,40 @@ def delete_track(track_id):
 
 
 
-@api.route("/v1/courses", methods=['POST'])
-def create_course():
+@api.route("/v1/resources", methods=['POST'])
+def create_resource():
     '''
-    Creates new course
+    Creates new resource
     '''
-    return "course created"
+    return "resource created"
 
-@api.route("/v1/courses", methods=['GET'])
-def read_courses():
+@api.route("/v1/resources", methods=['GET'])
+def read_resources():
     '''
-    Reads all courses
+    Reads all resources
     '''
-    return "Here are all courses"
+    return "Here are all resources"
 
-@api.route("/v1/courses/<course_id>", methods=['PUT'])
-def update_course(course_id):
+@api.route("/v1/resources/<resource_id>", methods=['PUT'])
+def update_resource(resource_id):
     '''
-    Updates given course
+    Updates given resource
     '''
-    return "Updated course"
+    return "Updated resource"
 
-@api.route("/v1/courses/<course_id>", methods=['GET'])
-def read_course(course_id):
+@api.route("/v1/resources/<resource_id>", methods=['GET'])
+def read_resource(resource_id):
     '''
-    Reads given course
+    Reads given resource
     '''
-    return "Here is a course"
+    return "Here is a resource"
 
-@api.route("/v1/courses/<course_id>", methods=['DELETE'])
-def delete_course(course_id):
+@api.route("/v1/resources/<resource_id>", methods=['DELETE'])
+def delete_resource(resource_id):
     '''
-    Deletes given course
+    Deletes given resource
     '''
-    return "course deleted"
+    return "resource deleted"
 
 
 
