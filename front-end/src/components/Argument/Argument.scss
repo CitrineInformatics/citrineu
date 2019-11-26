@@ -1,0 +1,15 @@
+.argument {
+    @include card-highlight-style;
+
+    p {
+        margin: 0;
+    }
+}
+
+.argument:hover {
+    box-shadow: 0px 3px 10px -2px #bbb;
+
+    .argument-name {
+        color: $accent-color2;
+    }
+}

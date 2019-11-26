@@ -1,0 +1,90 @@
+.vertical-navigation {
+    li {
+        list-style-type: none;
+        font-family: $heading-font;
+        margin-bottom: 0;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .nav-item .fas {
+        width: 25px;
+    }
+}
+
+.standard {
+    li.active {
+        color: $secondary-color;
+    }
+
+    .overview {
+        margin-bottom: $medium;
+        padding-bottom: $medium;
+        border-bottom: 1px solid #ddd;
+
+        .overviewTitle {
+            font-family: $heading-font;
+            font-weight: bold;
+        }
+    }
+}
+
+.boxy {
+    height: 100vh;
+    background-color: #efefef;
+
+    li {
+        padding: $mini;
+        border-bottom: 1px solid #555;
+    }
+
+    li.active {
+        background-color: $secondary-color;
+        color: white;
+    }
+}
+
+.robust {
+    li {
+        padding: $medium;
+        margin-bottom: $medium;
+        position: relative;
+        left: -$medium;
+
+        p {
+            margin-top: $small;
+        }
+    }
+
+    li.active {
+        color: $secondary-color;
+    }
+
+    li:hover {
+        @include card-highlight-style;
+
+        .overviewTitle, .nav-item-title {
+            color: $accent-color2
+        }
+    }
+}
+
+.compact {
+    li {
+        line-height: initial;
+        margin-bottom: $mini;
+        text-transform: uppercase;
+        font-size: $small;
+        padding-left: $mini;
+        box-sizing: border-box;
+        border-left: 3px solid transparent;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    li.active {
+        border-left: 3px solid $secondary-color;
+    }
+}
+

@@ -1,0 +1,34 @@
+#banner-doc-search {
+    padding: $small $medium;
+    background-color: $primary-color;
+    color: white;
+    font-family: $heading-font;
+}
+
+.doc-search {
+    position: relative;
+
+    .fa-search {
+        position: absolute;
+        left: $small;
+        top: $mini;
+    }
+}
+
+input.input-doc-search {
+    border: none;
+    outline: none;
+    font-family: $heading-font;
+    color: white;
+    font-size: $small;
+    padding: $mini $small $mini 45px;
+    border-radius: 30px;
+    background-color: rgba(255,255,255,.3);
+    width: 100%;
+    box-sizing: border-box
+}
+
+input.input-doc-search::placeholder { 
+    color: white;
+    line-height: initial;
+}

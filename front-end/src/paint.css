@@ -1,0 +1,747 @@
+/**
+*** Paint CSS
+*** Author: Ashley Livingston
+*** Version: 1.0.0
+**/
+
+
+/****************** GENERAL *****************/
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-size: 1em;
+}
+
+
+/* BASIC ELEMENTS */
+
+/**
+*** Fill in your own requirements for these as necessary
+**/
+
+h1, h2 {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+h5, p {
+	font-size: 1em;
+}
+
+p, li {
+    line-height: 1.7em;
+	margin-bottom: 15px;
+}
+
+p:last-of-type,
+li:last-of-type {
+	margin-bottom: 0;
+}
+
+li {
+	margin-left: 30px;
+}
+
+img {
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button,
+.button {
+	background-color: #555;
+	color: #fff;
+	border-radius: 5px;
+	padding: 12px;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	width: auto;
+}
+
+.panel {
+	background-color: #999;
+	color: white;
+}
+
+.panel.highlight {
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px 1px #bbb;
+}
+
+.panel:last-of-type {
+	margin-right: -4px;
+}
+
+
+/* FONTS */
+.mini {
+	font-size: .6em;
+}
+
+.small {
+	font-size: .8em;
+}
+
+.medium {
+	font-size: 1em; /* default font-size, no need to add this class to every module */
+}
+
+.large {
+	font-size: 1.25em;
+}
+
+.x2 {
+	font-size: 2em;
+}
+
+.x3 {
+	font-size: 3em;
+}
+
+.x4 {
+	font-size: 4em;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-weight: italic;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+
+
+
+/****************** SITE BUILDING BLOCKS *****************/
+.banner {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 75px 0px;
+}
+
+.container,
+.container-extender,
+.container-inner,
+.module-container {
+    display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.container {
+	width: 90%;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.container-extender,
+.container-inner,
+.module-container {
+	width: 100%;
+}
+
+.container-extender {
+	max-width: initial;
+}
+
+.container-inner {
+	max-width: 650px;
+	flex: 0 1 auto;
+}
+
+.module {
+	flex: 0 1 auto;
+	box-sizing: border-box;
+}
+
+
+
+
+
+/***************************************************************************/
+					/*************** LAYOUT **************/
+/***************************************************************************/
+
+/* ELEMENT WIDTH */
+
+/**
+*** If you require more specific widths, add them here in the same format
+*** .perPercentage
+**/
+
+
+.per10 {
+	width: 10%;
+}
+
+.per20 {
+	width: 20%;
+}
+
+.per25 {
+	width: 25%;
+}
+
+.per30 {
+	width: 30%;
+}
+
+.per33 {
+	width: 33.333%;
+}
+
+.per40 {
+	width: 40%;
+}
+
+.per50 {
+	width: 50%;
+}
+
+.per60 {
+	width: 60%;
+}
+
+.per70 {
+	width: 70%;
+}
+
+.per75 {
+	width: 75%;
+}
+
+.per80 {
+	width: 80%;
+}
+
+.per90 {
+	width: 90%;
+}
+
+.per100 {
+	width: 100%;
+}
+
+
+/***************************************************************************/
+				/*************** ALIGNMENT **************/
+/***************************************************************************/
+
+/**
+*** Apply the following styles to the container element to align the children
+*** inside the container
+**/
+
+.align-left {
+	justify-content: flex-start;
+}
+
+.align-center {
+	justify-content: center;
+}
+
+.align-right {
+	justify-content: flex-end;
+}
+
+.align-top {
+	align-items: flex-start;
+}
+
+.align-middle {
+	align-items: center;
+}
+
+.align-bottom {
+	align-items: flex-end;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+
+/**
+*** Apply the following styles to the children elements of the flex container
+*** i.e. module elements to align individual modules
+**/
+
+.self-align-top {
+	align-self: flex-start;
+}
+
+.self-align-bottom {
+	align-self: flex-end;
+}
+
+.self-align-middle {
+	align-self: center;
+}
+
+.self-align-stretch {
+	align-self: stretch;
+}
+
+.self-align-right {
+	margin-left: auto;
+}
+
+.self-align-left {
+	margin-right: auto;
+}
+
+
+
+
+/***************************************************************************/
+					/*************** PADDING **************/
+/***************************************************************************/
+
+
+/**
+*** All padding values are inside the box - use to create space between content 
+*** and module edge.  Module width will not change with padding.
+***
+***
+*** Use nested modules to create space between side-by-side elements with 
+*** background colors or images
+**/
+
+
+
+.padding-mini {
+	padding: 8px;
+}
+
+.padding-small {
+	padding: 15px;
+}
+
+.padding-medium {
+	padding: 30px;
+}
+
+.padding-large {
+	padding: 50px;
+}
+
+
+.padding-top-mini {
+	padding-top: 8px;
+}
+
+.padding-top-small {
+	padding-top: 15px;
+}
+
+.padding-top-medium {
+	padding-top: 30px;
+}
+
+.padding-top-large {
+	padding-top: 50px;
+}
+
+
+.padding-right-mini {
+	padding-right: 8px;
+}
+
+.padding-right-small {
+	padding-right: 15px;
+}
+
+.padding-right-medium {
+	padding-right: 30px;
+}
+
+.padding-right-large {
+	padding-right: 50px;
+}
+
+
+.padding-bottom-mini {
+	padding-bottom: 8px;
+}
+
+.padding-bottom-small {
+	padding-bottom: 15px;
+}
+
+.padding-bottom-medium {
+	padding-bottom: 30px;
+}
+
+.padding-bottom-large {
+	padding-bottom: 50px;
+}
+
+
+.padding-left-mini {
+	padding-left: 8px;
+}
+
+.padding-left-small {
+	padding-left: 15px;
+}
+
+.padding-left-medium {
+	padding-left: 30px;
+}
+
+.padding-left-large {
+	padding-left: 50px;
+}
+
+
+/***************************************************************************/
+					/*************** MARGIN **************/
+/***************************************************************************/
+
+.margin-top {
+	margin-top: 30px;
+}
+
+.margin-right {
+	margin-right: 30px;
+}
+
+.margin-bottom {
+	margin-bottom: 30px;
+}
+
+.margin-left {
+	margin-left: 30px;
+}
+
+.margin-center {
+	margin: 0 auto;
+}
+
+
+
+
+/***************************************************************************/
+/*************** YOUR OVERRIDES AND CUSTOMIZATIONS BELOW HERE **************/
+/***************************************************************************/
+
+
+
+
+
+/***************************************************************************/
+				/*************** MOBILE STYLE **************/
+/***************************************************************************/
+@media (min-width: 1400px) {
+	
+}
+
+@media (max-width: 1024px) {
+	.per10.no-collapse,
+	.per20.no-collapse,
+	.per25.no-collapse, 
+	.per30.no-collapse,
+	.per40.no-collapse,
+	.per50.no-collapse,
+	.per60.no-collapse,
+	.per70.no-collapse,
+	.per75.no-collapse,
+	.per80.no-collapse,
+	.per90.no-collapse {
+		width: initial;
+	}
+	
+	.tab-per10 {
+		width: 10%;
+	}
+
+	.tab-per20 {
+		width: 20%;
+	}
+
+	.tab-per25 {
+		width: 25%;
+	}
+
+	.tab-per30 {
+		width: 30%;
+	}
+
+	.tab-per33 {
+		width: 33.333%;
+	}
+
+	.tab-per40 {
+		width: 40%;
+	}
+
+	.tab-per50 {
+		width: 50%;
+	}
+
+	.tab-per60 {
+		width: 60%;
+	}
+
+	.tab-per70 {
+		width: 70%;
+	}
+
+	.tab-per75 {
+		width: 75%;
+	}
+
+	.tab-per80 {
+		width: 80%;
+	}
+
+	.tab-per90 {
+		width: 90%;
+	}
+
+	.tab-per100 {
+		width: 100%;
+	}
+	
+	
+	.tab-order-1 {
+		order: 1;
+	}
+	
+	.tab-order-2 {
+		order: 2;
+	}
+	
+	.tab-order-3 {
+		order: 3;
+	}
+	
+	.tab-order-4 {
+		order: 4;
+	}
+	
+	.tab-order-5 {
+		order: 5;
+	}
+	
+	.tab-order-6 {
+		order: 6;
+	}
+	
+	.tab-order-7 {
+		order: 7;
+	}
+	
+	.tab-order-8 {
+		order: 8;
+	}
+	
+	.tab-order-9 {
+		order: 9;
+	}
+	
+	.tab-order-10 {
+		order: 10;
+	}
+}
+	
+	
+@media (max-width: 768px) {
+	.banner {
+		padding: 50px 0px;
+	}
+	
+	.container {
+		width: 95%;
+	}
+	
+	.module {
+		margin-bottom: 30px;
+	}
+	
+	.module:last-of-type {
+		margin-bottom: 0;
+	}
+	
+	.per10,
+	.per20,
+	.per25,
+	.per30,
+	.per33,
+	.per40,
+	.per50,
+	.per60,
+	.per70,
+	.per75,
+	.per80,
+	.per90,
+	.per100 {
+		width: 100%;
+	}
+	
+	
+	.mob-per10 {
+		width: 10%;
+	}
+
+	.mob-per20 {
+		width: 20%;
+	}
+
+	.mob-per25 {
+		width: 25%;
+	}
+
+	.mob-per30 {
+		width: 30%;
+	}
+
+	.mob-per33 {
+		width: 33.333%;
+	}
+
+	.mob-per40 {
+		width: 40%;
+	}
+
+	.mob-per50 {
+		width: 50%;
+	}
+
+	.mob-per60 {
+		width: 60%;
+	}
+
+	.mob-per70 {
+		width: 70%;
+	}
+
+	.mob-per75 {
+		width: 75%;
+	}
+
+	.mob-per80 {
+		width: 80%;
+	}
+
+	.mob-per90 {
+		width: 90%;
+	}
+
+	.mob-per100 {
+		width: 100%;
+	}
+	
+	
+	.mob-order-1 {
+		order: 1;
+	}
+	
+	.mob-order-2 {
+		order: 2;
+	}
+	
+	.mob-order-3 {
+		order: 3;
+	}
+	
+	.mob-order-4 {
+		order: 4;
+	}
+	
+	.mob-order-5 {
+		order: 5;
+	}
+	
+	.mob-order-6 {
+		order: 6;
+	}
+	
+	.mob-order-7 {
+		order: 7;
+	}
+	
+	.mob-order-8 {
+		order: 8;
+	}
+	
+	.mob-order-9 {
+		order: 9;
+	}
+	
+	.mob-order-10 {
+		order: 10;
+	}
+	
+	
+	/* OPTIONAL, TO ENSURE EVERY ELEMENT IS CENTERED */
+	.text-left,
+	.text-right {
+		text-align: center;
+	}
+	
+	.padding-left-mini,
+	.padding-left-small,
+	.padding-left-medium,
+	.padding-left-large {
+		padding-left: 0;
+	}
+	
+	.padding-right-mini,
+	.padding-right-small,
+	.padding-right-medium,
+	.padding-right-large {
+		padding-right: 0;
+	}
+	
+	.margin-left {
+		margin-left: 0;
+	}
+	
+	.margin-right {
+		margin-right: 0;
+	}	
+}
+

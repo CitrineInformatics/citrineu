@@ -1,0 +1,18 @@
+.card-title {
+    background-color: $accent-color2;
+    color: white;
+    border-radius: $border-radius $border-radius 0px 0px;
+    font-family: $heading-font;
+}
+
+.card-title.topic-citrine {
+    background-color: $secondary-color;
+}
+
+.card-title.topic-ml {
+    background-color: $accent-color4;
+}
+
+.card-title.topic-programming {
+    background-color: $accent-color3;
+}

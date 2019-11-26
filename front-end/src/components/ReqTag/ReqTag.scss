@@ -1,0 +1,20 @@
+.req-tag {
+    padding: 2px 6px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px -3px #bbb;
+    text-transform: uppercase;
+    font-family: 'Inconsolata', monospace;
+    font-size: $small;
+    line-height: initial;
+    float: right;
+}
+
+.req-tag.optional {
+    background-color: #ddd;
+    color: $primary-color;
+}
+
+.req-tag.required {
+    background-color: $secondary-color;
+    color: white;
+}

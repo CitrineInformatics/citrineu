@@ -1,0 +1,319 @@
+{ 
+    "content": 
+        { 
+            "discover": [
+                { 
+                    "id": 1, 
+                    "title": "GEMD: The Citrine Data Model", 
+                    "type": "reference",
+                    "description": "A complete reference to GEMD, the Citrine Data Model, including it's philosophy, high level objects, and best practices.",
+                    "content": "The format links together materials, the processes that produced them, and the measurements that characterize them. This facilitates the backwards traversal from a measurement to the material on which it was performed to the process by which it was produced to the materials which were used in that process and so on and so forth.\n\nThis generalizes and matures the PIF's preparation and subSystems objects. Additionally, this format makes a first-class distinction between intent and realization, captured by Spec and Run objects, respectively. A single intent Spec can be realized into multiple Run objects.\n\nThis generalized and matures the ideal concept from the PIF's Composition and Quantity objects. This format contains a new type of object: the Measurement. Measurements capture data and meta-data about a discrete measurement activity, including the parameters and conditions associated with a set of measured properties. This many-to-many relationship between properties, conditions, and parameters resolves a fundamental ambiguity present in the PIF: which properties were measured at the same time under the same conditions?",
+                    "auth_required": false 
+                },
+                { 
+                    "id": 2, 
+                    "title": "Sequential Learning", 
+                    "type": "reference",
+                    "description": "Understand what sequential learning is and how it works on the Citrine Platform to deliver results.",
+                    "content": "content 2",
+                    "auth_required": true 
+                },
+                { 
+                    "id": 3, 
+                    "title": "Permissions and Access Control", 
+                    "type": "reference",
+                    "description": "Make granular decisions about what projects and what users have access to your data. See this complete guide.",
+                    "content": "content 3",
+                    "auth_required": false 
+                },
+                { 
+                    "id": 4, 
+                    "title": "Data Management and Maintenance", 
+                    "type": "reference",
+                    "description": "AI in R&D requires a different approach to data management and maintenance. Learn how to leverage structured data at your organization.",
+                    "content": "content 4",
+                    "auth_required": false 
+                },
+                { 
+                    "id": 5, 
+                    "title": "The Citrine Platform", 
+                    "type": "reference",
+                    "description": "Get to know the Citrine Platform app and how to use it effectively.",
+                    "content": "content 5",
+                    "auth_required": false 
+                },
+                { 
+                    "id": 6, 
+                    "title": "FAQ", 
+                    "type": "reference",
+                    "description": "See a list of commonly asked questions for quick and easy answers.",
+                    "content": "content 6",
+                    "auth_required": false 
+                }
+            ],
+            "documentation": { 
+                "id": 1, 
+                "title": "Citrine Python Client",
+                "description": "This documentation describes working with the Citrine Python Client. It covers accepted object types and their associated arguments, along with CRUD operations for an API only workflow.",
+                "auth_required": false,
+                "sections": [
+                    {
+                        "id": 1,
+                        "title": "Object Types",
+                        "description": "This section covers the several different object types that can be created using the Citrine Python Client.",
+                        "auth_required": false,
+                        "documents": [
+                            {
+                                "id": 1,
+                                "title": "MaterialSpec",
+                                "description": "MaterialSpec Object",
+                                "content": "Technically, to initialize a `MaterialSpec` object, you need only provide a name and a process. Best practice, however, dictates that a MaterialSpec will also be provided a Material Template, which is why we created one earlier. In addition, you can also pass arguments for description, tags, IDs and notes.",
+                                "type": "resource",
+                                "arguments": [
+                                    {
+                                        "name": "name",
+                                        "style": "string",
+                                        "type": "string",
+                                        "optional": false,
+                                        "description": "A string containing the name of this `MaterialSpec`",
+                                        "notes": ""
+                                    },
+                                    {
+                                        "name": "uids",
+                                        "style": "map",
+                                        "type": "Map of strings",
+                                        "optional": true,
+                                        "description": "A collection of strings containing unique IDs",
+                                        "notes": ""
+                                    },
+                                    {
+                                        "name": "tags",
+                                        "style": "list",
+                                        "type": "List of strings",
+                                        "optional": true,
+                                        "description": "A list of strings that store information about an entity. Tags can be used for filtering and discoverability.",
+                                        "notes": "For more information on writing good tags, see here."
+                                    },
+                                    {
+                                        "name": "process",
+                                        "style": "object",
+                                        "type": "ProcessSpec object",
+                                        "optional": false,
+                                        "description": "The `ProcessSpec` object that informs the real life process that produces this material",
+                                        "notes": ""
+                                    },
+                                    {
+                                        "name": "properties",
+                                        "style": "list",
+                                        "type": "List of PropertiesAndConditions objects",
+                                        "optional": true,
+                                        "description": "A list of `PropertiesAndConditions` objects.",
+                                        "notes": "To learn how to form a `PropertiesAndConditions` object, see here."
+                                    },
+                                    {
+                                        "name": "template",
+                                        "style": "object",
+                                        "type": "MaterialTemplate object",
+                                        "optional": true,
+                                        "description": "The `MaterialTemplate` object that bounds the valid values for this material’s properties.",
+                                        "notes": "While this is optional, it is best practice to first create a `MaterialTemplate` object that this `MaterialRun` object can be associated with."
+                                    },
+                                    {
+                                        "name": "file_links",
+                                        "style": "list",
+                                        "type": "List of FileLink objects",
+                                        "optional": true,
+                                        "description": "A list of `FileLink` objects. The objects link to associated files, with resource paths into the files API.",
+                                        "notes": "To learn how to form a `FileLink` object, see here."
+                                    }
+                                ],
+                                "code_example": {
+                                    "title": "Initalize MaterialSpec",
+                                    "description": "This code sample demonstrates how to initialize a `MaterialSpec` object. When initializing the object, keyword arguments are required.",
+                                    "code_string": "MaterialSpec(\n    name = 'My MaterialSpec Object',\n    process = process_spec_var,\n    template = material_template_var\n)"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "title": "Create Objects",
+                        "description": "Learn how to create new objects and register them to the platform.",
+                        "auth_required": false,
+                        "documents": [
+                            {
+                                "id": 1,
+                                "title": ".register()",
+                                "type": "method",
+                                "description": "Registering (uploading) an object to the platform",
+                                "content": "To create a resource, initialize it as you would any other python object. For example, this creates a process spec with the display name “Buy ammonium chloride” and no other information.To persist a resource in the database, you must upload it using the register command.\n\nThe following command uploads this process spec to the dataset. You must specify the dataset, because all process specs are associated with a dataset, and the collection type, in this case .process_specs.\n\nThe command `battery_dataset_1.material_runs.register(buy_electrolyte_spec)`, which attempts to register a process spec to the collection of material runs, will result in an error.\n\nThe register command returns a copy of the resource as it now exists in the database. The database may decorate the object with additional information, such as a unique identifier string that you can use to retrieve it in the future.",
+                                "arguments": [
+                                    {
+                                        "name": "object",
+                                        "style": "object",
+                                        "type": "Object",
+                                        "optional": false,
+                                        "description": "The object that is being registered to the platform.",
+                                        "notes": ""
+                                    }
+                                ],
+                                "code_example": {
+                                    "title": "Create an Object",
+                                    "description": "This code sample demonstrates how to save a previously initialized object to the platform.",
+                                    "code_string": "# The initialization of an object that is being registered\npurchase_spec = ProcessSpec('Buy ammonium chloride')\n\n# Registering (uploading) the object to the platform\nbattery_dataset.process_specs.register(purchase_spec)"
+                                }
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "title": "Get Objects",
+                        "description": "Get (read) and filter the objects you've created.",
+                        "auth_required": false,
+                        "resources": [
+                            
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "title": "Update Objects",
+                        "description": "Make changes to your existing objects and register them to the platform.",
+                        "auth_required": false,
+                        "resources": [
+                            
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "title": "Delete Objects",
+                        "description": "Delete your existing objects from the platform.",
+                        "auth_required": false,
+                        "resources": [
+                            
+                        ]
+                    }
+
+                ] 
+            },
+            "educationalContent": [
+                { 
+                    "id": 1, 
+                    "type": "course",
+                    "title": "Intro to GEMD",
+                    "description": "In this course you will be introduced GEMD, the Generalized Expression of Materials Data. This is the Citrine Data Model. Learn all about GEMD and organizing your data for sequential learning.", 
+                    "prerequisites": "Python, Pandas, DIFs",
+                    "length": 37,
+                    "stages": [
+                        {
+                            "id": 1,
+                            "title": "GEMD Philosophy",
+                            "description": "In the first stage of this course, you'll learn all about GEMD (Generalized Expression of Materials Data). This is the secret sauce to Citrine's Platform: it's the way we model, relate, and store ingested data.",
+                            "steps": [
+                                {
+                                    "id": 1,
+                                    "title": "What is GEMD?",
+                                    "description": "Understand why we created GEMD.",
+                                    "type": "video",
+                                    "content": "https://videolink",
+                                    "notes": "here are some notes",
+                                    "length": 2.5
+                                },
+                                {
+                                    "id": 2,
+                                    "title": "How is GEMD beneficial to you?",
+                                    "description": "Transitioning to an AI powered R&D process may seem difficult, but GEMD unlocks powerful ways to process your data, store, and visualize your data that makes this transition seamless.",
+                                    "type": "video",
+                                    "content": "https://videolink",
+                                    "length": 6
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "title": "Ingesting Data",
+                            "steps": [
+                                {
+                                    "id": 1,
+                                    "title": "The Importance of Data Management",
+                                    "description": "Proper data management is at the core of using the Citrine Platform. Learn how to implement this at your organization.",
+                                    "type": "video",
+                                    "content": "https://videolink"
+                                },
+                                {
+                                    "id": 2,
+                                    "title": "Writing DIFs",
+                                    "description": "DIFs are one of many ways to upload your experimental data to the Citrine Platform. Learn how they work.",
+                                    "type": "text",
+                                    "content": "https://videolink"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "title": "The Four High Level GEMD Objects",
+                            "steps": [
+                                {
+                                    "id": 1,
+                                    "title": "Materials",
+                                    "description": "Understand why we created GEMD.",
+                                    "type": "video",
+                                    "content": "https://videolink"
+                                },
+                                {
+                                    "id": 2,
+                                    "title": "Ingredients",
+                                    "description": "Understand why we created GEMD.",
+                                    "type": "video",
+                                    "content": "https://videolink"
+                                },
+                                {
+                                    "id": 3,
+                                    "title": "Processes",
+                                    "description": "Understand why we created GEMD.",
+                                    "type": "video",
+                                    "content": "https://videolink"
+                                },
+                                {
+                                    "id": 4,
+                                    "title": "Measurements",
+                                    "description": "Understand why we created GEMD.",
+                                    "type": "video",
+                                    "content": "https://videolink"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "title": "Working with the GEMD API",
+                            "steps": [
+                                {
+                                    "id": 1,
+                                    "title": "Create a Project",
+                                    "description": "Understand why we created GEMD.",
+                                    "type": "video",
+                                    "content": "https://videolink"
+                                },
+                                {
+                                    "id": 2,
+                                    "title": "Create a Dataset",
+                                    "description": "Understand why we created GEMD.",
+                                    "type": "video",
+                                    "content": "https://videolink"
+                                },
+                                {
+                                    "id": 3,
+                                    "title": "Register Objects",
+                                    "description": "Understand why we created GEMD.",
+                                    "type": "video",
+                                    "content": "https://videolink"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+}
+
+

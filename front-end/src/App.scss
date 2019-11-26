@@ -1,0 +1,51 @@
+@import 'variables';
+@import './components/HorizontalNavigation/HorizontalNavigation';
+@import './components/VerticalNavigation/VerticalNavigation';
+@import './components/Button/Button';
+@import './components/CardTitle/CardTitle';
+@import './components/Card/Card';
+@import './components/Course/Course';
+@import './components/CourseTray/CourseTray';
+@import './components/Stage/Stage';
+@import './components/FilterBy/FilterBy';
+@import './components/ReqTag/ReqTag';
+@import './components/Argument/Argument';
+@import './components/DocSearch/DocSearch';
+@import './components/Document/Document';
+@import './components/ProgressBar/ProgressBar';
+
+.background {
+    position: fixed;
+    z-index: -5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f8f8;
+}
+#banner-horizontal-navigation {
+    padding: $small $medium;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    box-shadow: 0px 0px 5px #bbb;
+    z-index: 100;
+}
+
+#banner-welcome {
+    background-image: url('./banner.png');
+
+    * {
+        color: white;
+    }
+
+    .button {
+        background-color: $primary-color;
+    }
+}
+
+@media (max-width: 768px) {
+    #banner-horizontal-navigation {
+        padding: $small 0px;
+    }
+}

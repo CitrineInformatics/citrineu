@@ -1,0 +1,14 @@
+.course-tray {
+    position: relative;
+    height: 100vh;
+}
+
+.course-tray::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 25px;
+    width: 5px;
+    background-color: $accent-color;
+    content:"";
+}

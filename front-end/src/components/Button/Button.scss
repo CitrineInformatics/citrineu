@@ -1,0 +1,25 @@
+.light {
+    background-color: $secondary-color;
+    color: white;
+}
+
+.inverse {
+    background-color: white;
+    color: $secondary-color;
+}
+
+.inverse:hover {
+    @include card-highlight-style;
+}
+
+.dark {
+    background-color: $primary-color;
+    color: white;
+}
+
+.inverse-mini {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 0px;
+    border-bottom: 2px solid $secondary-color;
+}
