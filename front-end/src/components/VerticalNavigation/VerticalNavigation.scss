@@ -13,6 +13,8 @@
 }
 
 .standard {
+    font-size: $large-font;
+    
     li.active {
         color: $secondary-color;
     }
@@ -21,11 +23,13 @@
         margin-bottom: $medium;
         padding-bottom: $medium;
         border-bottom: 1px solid #ddd;
-
-        .overviewTitle {
-            font-family: $heading-font;
-            font-weight: bold;
-        }
+    }
+	
+    .overviewTitle, .navItemsTitle {
+		font-size: $large-font;
+        font-family: $heading-font;
+        font-weight: bold;
+        margin-bottom: $medium;
     }
 }
 
@@ -74,7 +78,7 @@
         line-height: initial;
         margin-bottom: $mini;
         text-transform: uppercase;
-        font-size: $small;
+        font-size: $small-font;
         padding-left: $mini;
         box-sizing: border-box;
         border-left: 3px solid transparent;

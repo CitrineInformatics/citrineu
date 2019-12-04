@@ -1,5 +1,5 @@
 import React , { Component } from 'react';
-import { BrowserRouter as Router, Route, matchPath } from "react-router-dom";
+import { BrowserRouter as Router, Route, matchPath, Redirect } from "react-router-dom";
 import VerticalNavigation from '../VerticalNavigation/VerticalNavigation';
 import Document from '../Document/Document';
 import data from '../../dummyData.json';
@@ -21,7 +21,7 @@ class Section extends Component {
 
     render() {
         let section = data.content.documentation.sections.find(section => section.id == this.props.match.params.sectionId);
-        console.log(this.props.match.path)
+        console.log(this.props.match.params.docId)
         return (
             <div className="module p100">
                 <div className="container">
@@ -40,9 +40,19 @@ class Section extends Component {
                             path={this.parentPath}
                             activeContentId={this.props.match.params.docId}/>
                     </div>
+
+                    {
+                        this.props.match.params.docId === undefined
+                        ? <Route
+                            exact
+                            path={`${this.props.match.path}`}
+                            render={props => (
+                                <Redirect to={`${this.props.match.url}/1`} />
+                            )} />
+                        : <Route path={`${this.props.match.path}/:docId`} component={Document}/>
+                    }
            
-                    <Route path={`${this.props.match.path}/:docId`} component={Document}/>
-                    {/* { this.generateResourceComponents(document.documents) } */}
+                    
                 </div>
             </div>
         );

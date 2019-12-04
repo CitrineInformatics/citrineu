@@ -9,7 +9,7 @@ class VerticalNavigation extends Component {
 
     get overview() {
         return (
-            <li className={`large overview`}>
+            <li className={`overview`}>
                 <Link key="overview" to={ `${this.props.path}` }>
                     <p className="overviewTitle">{ this.props.overviewTitle }</p>
                     <p>{ this.props.overviewDescription }</p>
@@ -20,7 +20,7 @@ class VerticalNavigation extends Component {
 
     get navItems() {
         return this.props.data.map((item) => (
-            <li className={`bold large ${this.props.activeContentId == item.id ? 'active' : ''} nav-item`}>
+            <li className={`bold ${this.props.activeContentId == item.id ? 'active' : ''} nav-item`}>
                 <Link key={item.id} to={ `${this.props.path}/${item.id}` }>
                     { item.type ? <Icon style={item.type}/> : ''} 
                     <span className="nav-item-title">
@@ -37,6 +37,7 @@ class VerticalNavigation extends Component {
             <div className={`module p100 vertical-navigation ${this.props.theme}`}>
                 <div className="container">
                     { this.props.includeOverview ? this.overview : '' }
+                    <p className="large navItemsTitle">{ this.props.includeNavItemsTitle ? this.props.navItemsTitle : '' }</p>
                     { this.navItems }
                 </div>
             </div>

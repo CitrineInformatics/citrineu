@@ -202,7 +202,20 @@
                     "type": "course",
                     "title": "Intro to GEMD",
                     "description": "In this course you will be introduced GEMD, the Generalized Expression of Materials Data. This is the Citrine Data Model. Learn all about GEMD and organizing your data for sequential learning.", 
-                    "prerequisites": "Python, Pandas, DIFs",
+                    "prerequisites": [
+                        { 
+                            "id": 1,
+                            "title": "Introduction to Python"
+                        },
+                        { 
+                            "id": 2,
+                            "title": "Introduction to Pandas"
+                        },
+                        { 
+                            "id": 3,
+                            "title": "Writing DIFs"
+                        }
+                    ], 
                     "length": 37,
                     "stages": [
                         {

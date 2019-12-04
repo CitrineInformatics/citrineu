@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, make_response, jsonify
 from flask import current_app as app
-from ..models import db, User, Track, Resource, Section, Step
+from ..models import db, User, Track, EducationalResource, Stage, Step
+import psycopg2
 
 
 api = Blueprint('api', __name__)
@@ -97,8 +98,8 @@ def delete_track(track_id):
     return "track deleted"
 
 
-# Resources
-@api.route("/v1/resources", methods=['POST'])
+# Educational Resources (courses and tutorials)
+@api.route("/v1/educational_resources", methods=['POST'])
 def create_resource():
     '''
     Creates new resource
@@ -108,7 +109,7 @@ def create_resource():
     description = request.args.get('description')
     resource_type = request.args.get('resource_type')
 
-    resource = Resource(
+    resource = EducationalResource(
         name=name,
         description=description,
         resource_type=resource_type)  
@@ -119,38 +120,38 @@ def create_resource():
     return make_response(f"{resource} successfully created!")
 
 
-@api.route("/v1/resources", methods=['GET'])
+@api.route("/v1/educational_resources", methods=['GET'])
 def read_resources():
     '''
     Reads all resources
     '''
-    resources = Resource.query.all()
+    resources = EducationalResource.query.all()
     return jsonify(resources = [resource.serialize() for resource in resources])
 
-@api.route("/v1/resources/type/<resource_type>", methods=['GET'])
+@api.route("/v1/educational_resources/type/<resource_type>", methods=['GET'])
 def read_resources_by_type(resource_type):
     '''
     Gets resources by type
     '''
-    resources = Resource.query.filter_by(resource_type = resource_type)
+    resources = EducationalResource.query.filter_by(resource_type = resource_type)
     return jsonify(resources = [resource.serialize() for resource in resources])
 
-@api.route("/v1/resources/<resource_id>", methods=['PUT'])
+@api.route("/v1/educational_resources/<resource_id>", methods=['PUT'])
 def update_resource(resource_id):
     '''
     Updates given resource
     '''
     return "Updated resource"
 
-@api.route("/v1/resources/<resource_id>", methods=['GET'])
+@api.route("/v1/educational_resources/<resource_id>", methods=['GET'])
 def read_resource(resource_id):
     '''
     Reads given resource
     '''
-    resources = Resource.query.filter_by(id = resource_id)
+    resources = EducationalResource.query.filter_by(id = resource_id)
     return jsonify(resources = [resource.serialize() for resource in resources])
 
-@api.route("/v1/resources/<resource_id>", methods=['DELETE'])
+@api.route("/v1/educational_resources/<resource_id>", methods=['DELETE'])
 def delete_resource(resource_id):
     '''
     Deletes given resource
@@ -193,6 +194,42 @@ def delete_section(section_id):
     Deletes given section
     '''
     return "section deleted"
+
+# stageS
+@api.route("/v1/stages", methods=['POST'])
+def create_stage():
+    '''
+    Creates new stage
+    '''
+    return "stage created"
+
+@api.route("/v1/stages", methods=['GET'])
+def read_stages():
+    '''
+    Reads all stages
+    '''
+    return "Here are all stages"
+
+@api.route("/v1/stages/<stage_id>", methods=['PUT'])
+def update_stage(stage_id):
+    '''
+    Updates given stage
+    '''
+    return "Updated stage"
+
+@api.route("/v1/stages/<stage_id>", methods=['GET'])
+def read_stage(stage_id):
+    '''
+    Reads given stage
+    '''
+    return "Here is a stage"
+
+@api.route("/v1/stages/<stage_id>", methods=['DELETE'])
+def delete_stage(stage_id):
+    '''
+    Deletes given stage
+    '''
+    return "stage deleted"
 
 
 # STEPS

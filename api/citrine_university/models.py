@@ -78,18 +78,24 @@ class Track(db.Model):
 
     
 
-class Resource(db.Model):
+class EducationalResource(db.Model):
     """
     Model for resources
     """
 
-    __tablename__ = 'resources'
+    __tablename__ = 'educational_resources'
 
     id = db.Column(
         db.Integer,
         primary_key=True)
+        
+    resource_type = db.Column(
+        db.String(64),
+        index=False,
+        unique=False,
+        nullable=True)
 
-    name = db.Column(
+    title = db.Column(
         db.String(64),
         index=False,
         unique=True,
@@ -100,6 +106,19 @@ class Resource(db.Model):
         index=False,
         unique=False,
         nullable=True)
+        
+    prerequisites = db.Column(
+        db.String(255),
+        index=False,
+        unique=False,
+        default="No prerequisites",
+        nullable=True)
+        
+    length = db.Column(
+        db.Integer(),
+        index=False,
+        unique=False,
+        nullable=False)
     
     tracks = db.Column(
         db.String(255),
@@ -108,11 +127,11 @@ class Resource(db.Model):
         default="No tracks",
         nullable=True)
 
-    sections = db.Column(
+    stages = db.Column(
         db.String(255),
         index=False,
         unique=False,
-        default="No sections",
+        default="No stages",
         nullable=True)
     
     steps = db.Column(
@@ -120,12 +139,6 @@ class Resource(db.Model):
         index=False,
         unique=False,
         default="No steps",
-        nullable=True)
-        
-    resource_type = db.Column(
-        db.String(64),
-        index=False,
-        unique=False,
         nullable=True)
 
     topics = db.Column(
@@ -150,7 +163,7 @@ class Resource(db.Model):
             'topics': self.topics.split(',')
         }
 
-class Section(db.Model):
+class Stage(db.Model):
     """
     Model for sections
     """
@@ -161,7 +174,7 @@ class Section(db.Model):
         db.Integer,
         primary_key=True)
 
-    name = db.Column(
+    title = db.Column(
         db.String(64),
         index=False,
         unique=True,
@@ -171,7 +184,7 @@ class Section(db.Model):
         db.String(255),
         index=False,
         unique=False,
-        nullable=False)
+        nullable=True)
     
     resource = db.Column(
         db.String(64),
@@ -202,7 +215,7 @@ class Step(db.Model):
         db.Integer,
         primary_key=True)
 
-    name = db.Column(
+    title = db.Column(
         db.String(64),
         index=False,
         unique=True,
@@ -238,8 +251,20 @@ class Step(db.Model):
         unique=False,
         nullable=False)
 
-    section = db.Column(
+    stage = db.Column(
         db.Integer(),
         index=False,
         unique=False,
         nullable=True)
+        
+    notes = db.Column(
+        db.Text(),
+        index=False,
+        unique=False,
+        nullable=True)
+        
+    length = db.Column(
+        db.Integer(),
+        index=False,
+        unique=False,
+        nullable=False)

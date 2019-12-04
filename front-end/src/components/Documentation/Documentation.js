@@ -46,9 +46,7 @@ class Documentation extends Component {
                                 activeContentId={this.activeContentId}/>
                         </div>
                         <div className="module p70">
-                            {/* { this.getRoute(documentation, path) } */}
                             <Route path={`${this.props.match.path}/:sectionId`} component={Section}/>
-                            {/* <Route path={`${this.props.match.path}/:sectionId/:docId`} component={Document}/> */}
                         </div>
                     </div>
                 </section>

@@ -43,6 +43,8 @@ class Course extends Component {
                                 includeOverview={true}
                                 overviewTitle="In this Course"
                                 overviewDescription={ course.description }
+                                includeNavItemsTitle={true}
+                                navItemsTitle="Course Sections"
                                 data={ course.stages }
                                 theme="standard"
                                 activeContentId={this.activeContentId}/>

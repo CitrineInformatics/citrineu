@@ -2,7 +2,7 @@ import React , { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import Markdown from 'react-markdown';
-import Resource from '../Resource/Resource';
+import Document from '../Document/Document';
 import data from '../../dummyData.json';
 
 class Guide extends Component {
@@ -10,9 +10,9 @@ class Guide extends Component {
         super(props);
     }
 
-    generateResourceComponents(resources) {
-        return resources.map(resource => 
-            <Resource resource={ resource }/>
+    generateDocumentComponents(documents) {
+        return documents.map(document => 
+            <Document document={ document }/>
         );
     }
 
@@ -23,7 +23,7 @@ class Guide extends Component {
                 <p>{ section.description }</p>
 
                 <div className="container">
-                    { this.generateResourceComponents(section.resources) }
+                    { this.generateDocumentComponents(section.documents) }
                 </div>
             </div>
         );

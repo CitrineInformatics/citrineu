@@ -1,5 +1,6 @@
 from flask import Flask, g
 from flask_sqlalchemy import SQLAlchemy
+import psycopg2
 
 # Globally accessible libraries
 db = SQLAlchemy()

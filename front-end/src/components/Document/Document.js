@@ -17,8 +17,6 @@ class Document extends Component {
     }
 
     render() {
-        // const resource = this.props.resource;
-        console.log(data.content.documentation.sections.find(section => section.id == this.props.match.params.sectionId))
         const resource = data.content.documentation.sections.find(section => section.id == this.props.match.params.sectionId)
             .documents.find(document => document.id == this.props.match.params.docId);
 
