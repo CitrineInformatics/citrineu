@@ -13,10 +13,18 @@ class Section extends Component {
         return `/python-client-documentation/${this.props.match.params.sectionId}`;
     }
 
-    generateResourceComponents(resources) {
-        return resources.map(resource => 
+    generateDocumentComponents(documents) {
+        return documents.map(document => 
             <Document document={ document }/>
         );
+    }
+
+    get activeContentId() {
+        const matchProfile = matchPath(this.props.location.pathname, {
+            path: `/python-client-documentation/:sectionId/:docId`,
+        });
+
+        return (matchProfile && matchProfile.params) ? matchProfile.params.docId : '';
     }
 
     render() {
@@ -28,31 +36,26 @@ class Section extends Component {
                     <div class="module p70">
                         <h2 className="mbm">{section.title}</h2>
                         <p>{ section.description }</p>
+
                     </div>
 
                     <div class="module p20 self-align-right">
                         <span className="heading bold large pbs">
                             In this Section
                         </span>
+
                         <VerticalNavigation 
                             theme="compact"
                             data={section.documents}
                             path={this.parentPath}
-                            activeContentId={this.props.match.params.docId}/>
+                            activeContentId={this.activeContentId}/>
                     </div>
 
-                    {
-                        this.props.match.params.docId === undefined
-                        ? <Route
-                            exact
-                            path={`${this.props.match.path}`}
-                            render={props => (
-                                <Redirect to={`${this.props.match.url}/1`} />
-                            )} />
-                        : <Route path={`${this.props.match.path}/:docId`} component={Document}/>
-                    }
-           
+                    <Route
+                        path={`${this.props.match.path}/:docId`}
+                        children={(match) => <Document docId={1} sectionId={this.props.match.params.sectionId} {...match}  /> } />
                     
+
                 </div>
             </div>
         );

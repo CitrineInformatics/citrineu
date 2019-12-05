@@ -13,7 +13,6 @@ class Step extends Component {
     }
 
     render() {
-        console.log(this.props.location)
         const stage = data.content.educationalContent.find(course => course.id == this.props.match.params.courseId)
             .stages.find(stage => stage.id == this.props.match.params.stageId)
         const step = stage.steps.find(step => step.id == this.props.match.params.stepId);

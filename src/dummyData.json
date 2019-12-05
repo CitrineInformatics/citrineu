@@ -132,6 +132,76 @@
                                     "description": "This code sample demonstrates how to initialize a `MaterialSpec` object. When initializing the object, keyword arguments are required.",
                                     "code_string": "MaterialSpec(\n    name = 'My MaterialSpec Object',\n    process = process_spec_var,\n    template = material_template_var\n)"
                                 }
+                            },
+                            {
+                                "id": 2,
+                                "title": "MaterialRun",
+                                "description": "MaterialRun Object",
+                                "content": "Technically, to initialize a `MaterialRun` object, you need only provide a name and a process. Best practice, however, dictates that a MaterialSpec will also be provided a Material Template, which is why we created one earlier. In addition, you can also pass arguments for description, tags, IDs and notes.",
+                                "type": "resource",
+                                "arguments": [
+                                    {
+                                        "name": "name",
+                                        "style": "string",
+                                        "type": "string",
+                                        "optional": false,
+                                        "description": "A string containing the name of this `MaterialSpec`",
+                                        "notes": ""
+                                    },
+                                    {
+                                        "name": "uids",
+                                        "style": "map",
+                                        "type": "Map of strings",
+                                        "optional": true,
+                                        "description": "A collection of strings containing unique IDs",
+                                        "notes": ""
+                                    },
+                                    {
+                                        "name": "tags",
+                                        "style": "list",
+                                        "type": "List of strings",
+                                        "optional": true,
+                                        "description": "A list of strings that store information about an entity. Tags can be used for filtering and discoverability.",
+                                        "notes": "For more information on writing good tags, see here."
+                                    },
+                                    {
+                                        "name": "process",
+                                        "style": "object",
+                                        "type": "ProcessSpec object",
+                                        "optional": false,
+                                        "description": "The `ProcessSpec` object that informs the real life process that produces this material",
+                                        "notes": ""
+                                    },
+                                    {
+                                        "name": "properties",
+                                        "style": "list",
+                                        "type": "List of PropertiesAndConditions objects",
+                                        "optional": true,
+                                        "description": "A list of `PropertiesAndConditions` objects.",
+                                        "notes": "To learn how to form a `PropertiesAndConditions` object, see here."
+                                    },
+                                    {
+                                        "name": "template",
+                                        "style": "object",
+                                        "type": "MaterialTemplate object",
+                                        "optional": true,
+                                        "description": "The `MaterialTemplate` object that bounds the valid values for this material’s properties.",
+                                        "notes": "While this is optional, it is best practice to first create a `MaterialTemplate` object that this `MaterialRun` object can be associated with."
+                                    },
+                                    {
+                                        "name": "file_links",
+                                        "style": "list",
+                                        "type": "List of FileLink objects",
+                                        "optional": true,
+                                        "description": "A list of `FileLink` objects. The objects link to associated files, with resource paths into the files API.",
+                                        "notes": "To learn how to form a `FileLink` object, see here."
+                                    }
+                                ],
+                                "code_example": {
+                                    "title": "Initalize MaterialSpec",
+                                    "description": "This code sample demonstrates how to initialize a `MaterialSpec` object. When initializing the object, keyword arguments are required.",
+                                    "code_string": "MaterialSpec(\n    name = 'My MaterialSpec Object',\n    process = process_spec_var,\n    template = material_template_var\n)"
+                                }
                             }
                         ]
                     },
