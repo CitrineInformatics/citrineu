@@ -21,7 +21,7 @@ class VerticalNavigation extends Component {
     get navItems() {
         return this.props.data.map((item) => (
             <li className={`bold ${this.props.activeContentId == item.id ? 'active' : ''} nav-item`}>
-                <Link key={item.id} to={ `${this.props.path}/${item.id}` }>
+                <Link key={item.id} to={ `/citrineu/${this.props.path}/${item.id}` }>
                     { item.type ? <Icon style={item.type}/> : ''} 
                     <span className="nav-item-title">
                         {item.title}  
