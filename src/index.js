@@ -14,7 +14,7 @@ import Login from './components/Login/Login';
 
 import * as serviceWorker from './serviceWorker';
 
-const navItems = ['Discover', 'Python Client Documentation', 'Tutorials', 'Courses', 'Login'];
+const navItems = ['Discover', 'LinkMaster Documentation', 'Tutorials', 'Courses'];
 
 ReactDOM.render(
     <Router>
@@ -34,11 +34,11 @@ ReactDOM.render(
             
             <Route exact path="/" component={App}/>
             <Route path="/discover" component={Discover}/>
-            <Route path="/python-client-documentation" component={Documentation}/>
+            <Route path="/linkmaster-documentation" component={Documentation}/>
             <Route exact path="/courses" component={Courses}/>
             <Route path="/courses/:courseId" component={Course}/>
             <Route path="/tutorials" component={Tutorials}/>
-            <Route path="/login" component={Login}/>
+            {/* <Route path="/login" component={Login}/> */}
         </div>
     </Router>, document.getElementById('root')
 

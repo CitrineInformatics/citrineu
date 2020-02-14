@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, matchPath, Redirect } from "react-route
 import VerticalNavigation from '../VerticalNavigation/VerticalNavigation';
 import Document from '../Document/Document';
 import data from '../../dummyData.json';
+import documentation from '../../lm.json';
+import Markdown from 'react-markdown';
 
 class Section extends Component {
     constructor(props) {
@@ -10,7 +12,7 @@ class Section extends Component {
     }
 
     get parentPath() {
-        return `/python-client-documentation/${this.props.match.params.sectionId}`;
+        return `/linkmaster-documentation/${this.props.match.params.sectionId}`;
     }
 
     generateDocumentComponents(documents) {
@@ -21,25 +23,25 @@ class Section extends Component {
 
     get activeContentId() {
         const matchProfile = matchPath(this.props.location.pathname, {
-            path: `/python-client-documentation/:sectionId/:docId`,
+            path: `/linkmaster-documentation/:sectionId/:docId`,
         });
 
         return (matchProfile && matchProfile.params) ? matchProfile.params.docId : '';
     }
 
     render() {
-        let section = data.content.documentation.sections.find(section => section.id == this.props.match.params.sectionId);
+        let section = documentation.sections.find(section => section.id == this.props.match.params.sectionId);
         console.log(this.props.match.params.docId)
         return (
             <div className="module p100">
                 <div className="container">
-                    <div class="module p70">
+                    <div class="module p65">
                         <h2 className="mbm">{section.title}</h2>
-                        <p>{ section.description }</p>
+                        <p className="large"><Markdown source={ section.description }/></p>
 
                     </div>
 
-                    <div class="module p20 self-align-right">
+                    <div class="module p25 self-align-right">
                         <span className="heading bold large pbs">
                             In this Section
                         </span>

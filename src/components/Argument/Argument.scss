@@ -1,9 +1,5 @@
 .argument {
     @include card-highlight-style;
-
-    p {
-        margin: 0;
-    }
 }
 
 .argument:hover {

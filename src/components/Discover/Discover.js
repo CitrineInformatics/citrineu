@@ -35,12 +35,14 @@ class Discover extends Component {
 
         return (
             <div>
-                <DocSearch />
+                {/* <DocSearch /> */}
                 <section className="banner" id="banner-documentation">
                     <div className="container">
                         <div className="module p50 prm">
                             <h2 className="mbm">Discover Citrine</h2>
-                            <VerticalNavigation theme="robust" path={this.props.match.url} data={guides}/>
+
+                            <p className="large">The Discover section of CitrineU will feature long-form reference guides that can answer your detailed questions on topics ranging from GEMD to Sequential Learning to the platform interface. As CitrineU grows, this section will grow as well. Please check back soon.</p>
+                            {/* <VerticalNavigation theme="robust" path={this.props.match.url} data={guides}/> */}
                         </div>
                         <div className="module p50">
                             { this.getRoute(guides, path) }

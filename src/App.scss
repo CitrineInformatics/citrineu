@@ -13,6 +13,7 @@
 @import './components/DocSearch/DocSearch';
 @import './components/Document/Document';
 @import './components/ProgressBar/ProgressBar';
+@import './components/Loading/Loading';
 
 .background {
     position: fixed;
@@ -42,6 +43,27 @@
     .button {
         background-color: $primary-color;
     }
+}
+
+table {
+    border-spacing: 0px;
+    margin-bottom: 25px;
+    text-align: left;
+    border: 1px solid #ddd;
+    margin-top: 25px;
+    font-family: $code-font;
+}
+
+th, td {
+    padding: 3px 7px;
+}
+
+th:not(:last-child), td:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
+
+th {
+    border-bottom: 1px solid #ddd;
 }
 
 @media (max-width: 768px) {

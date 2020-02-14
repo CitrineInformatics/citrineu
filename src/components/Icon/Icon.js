@@ -25,6 +25,10 @@ class Icon extends Component {
             return <i class="fas fa-list"></i>
         } else if (this.props.style == "map") {
             return <i class="fas fa-globe-americas"></i>
+        } else if (this.props.style == "date") {
+            return <i class="fas fa-calendar-day"></i>
+        } else if (this.props.style == "unit" || this.props.style == "value") {
+            return <i class="fas fa-ruler"></i>
         } else {
             return ''
         }

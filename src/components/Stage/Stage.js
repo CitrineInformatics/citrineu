@@ -7,7 +7,22 @@ import Card from '../Card/Card';
 class Stage extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            resources: []
+        }
+
+        this.url = "https://citrineu.herokuapp.com/api"
+        this.url2 = "http://localhost:5000/api"
     }
+
+    // componentDidMount() {
+    //     // In reality, I'll be fetching from the API here, but importing dummy data from json file for now.
+
+    //     fetch(`${this.url2}/v1/stages/${this.props.match.params.stageId}`)
+    //         .then(response => response.json())
+    //         .then(data => this.setState({ resources: data.resources }));
+    // }
 
     generateStepComponents = (steps) => {
         return steps.map(step => 
@@ -30,18 +45,25 @@ class Stage extends Component {
     }
 
     render() {
-        const stage = data.content.educationalContent.find(course => course.id == this.props.match.params.courseId)
-            .stages.find(stage => stage.id == this.props.match.params.stageId);
-
+        const stage = this.props.stages.find(stage => stage.id == this.props.match.params.stageId);
+        
         return (
-            <div className="module per100">
-                <h2 className="titlecase mbm">{ stage.title }</h2>
-                <p className="large">{ stage.description }</p>
+            <div>
+{
+                stage !== undefined
+                ?<div className="module per100">
+                    <h2 className="titlecase mbm">{ stage.title }</h2>
+                    <p className="large">{ stage.description }</p>
 
-                <div className="container">
-                    { this.generateStepComponents(stage.steps) }
+                    <div className="container">
+                        { this.generateStepComponents(stage.steps) }
+                    </div>
                 </div>
+                : <div>loading....</div>
+            }
             </div>
+            
+            
         );
     }
 }
