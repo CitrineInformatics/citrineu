@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5fa7b0a2fb10c48f128955d5a608f727",
+    "revision": "6001680b4ed5abb05eb1d2f942688c6b",
     "url": "/citrineu/index.html"
   },
   {
-    "revision": "1e9865edd172277f067f",
+    "revision": "fe0a78163fcbf6d0afab",
     "url": "/citrineu/static/css/main.0cb9016c.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/citrineu/static/js/2.0815dded.chunk.js"
   },
   {
-    "revision": "1e9865edd172277f067f",
-    "url": "/citrineu/static/js/main.923fe826.chunk.js"
+    "revision": "fe0a78163fcbf6d0afab",
+    "url": "/citrineu/static/js/main.31ed625a.chunk.js"
   },
   {
     "revision": "09463acc0aa854c9277e",
