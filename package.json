@@ -1,7 +1,7 @@
 {
   "name": "citrineu",
   "homepage": "http://citrineinformatics.github.io/citrineu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.2.0",

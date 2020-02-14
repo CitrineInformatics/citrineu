@@ -10,7 +10,7 @@ class Logo extends Component {
 
     render() {
         return (
-            <Link to="/"><img id="logo" src={logo}></img></Link>
+            <Link to="/citrineu/"><img id="logo" src={logo}></img></Link>
         );
     }
 }
