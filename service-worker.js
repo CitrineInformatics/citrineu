@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/citrineu/precache-manifest.26b5f2196cd30e5a7ea4ada8afad500a.js"
+  "/citrineu/precache-manifest.9dd3ab658c28613ee91d60c553a76ab6.js"
 );
 
 self.addEventListener('message', (event) => {
