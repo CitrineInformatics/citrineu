@@ -12,7 +12,7 @@ class Section extends Component {
     }
 
     get parentPath() {
-        return `/linkmaster-documentation/${this.props.match.params.sectionId}`;
+        return `citrineu/linkmaster-documentation/${this.props.match.params.sectionId}`;
     }
 
     generateDocumentComponents(documents) {
