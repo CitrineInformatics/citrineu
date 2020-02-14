@@ -32,12 +32,12 @@ ReactDOM.render(
                 </div>
             </header>
             
-            <Route exact path="/" component={App}/>
-            <Route path="/discover" component={Discover}/>
-            <Route path="/linkmaster-documentation" component={Documentation}/>
-            <Route exact path="/courses" component={Courses}/>
-            <Route path="/courses/:courseId" component={Course}/>
-            <Route path="/tutorials" component={Tutorials}/>
+            <Route exact path="/citrineu" component={App}/>
+            <Route path="/citrineu/discover" component={Discover}/>
+            <Route path="/citrineu/linkmaster-documentation" component={Documentation}/>
+            <Route exact path="/citrineu/courses" component={Courses}/>
+            <Route path="/citrineu/courses/:courseId" component={Course}/>
+            <Route path="/citrineu/tutorials" component={Tutorials}/>
             {/* <Route path="/login" component={Login}/> */}
         </div>
     </Router>, document.getElementById('root')
