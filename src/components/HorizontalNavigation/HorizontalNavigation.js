@@ -14,7 +14,7 @@ class HorizontalNavigation extends Component {
     generateNavItems() {
         return this.props.navItems.map((item) => (
             <div className="module plm">
-                <Link key={item.indexOf()} to={ `/${item.toLowerCase().replace(/\s/g, '-')}` }>{item}</Link>
+                <Link key={item.indexOf()} to={ `/citrineu/${item.toLowerCase().replace(/\s/g, '-')}` }>{item}</Link>
             </div>
         ));
     }
