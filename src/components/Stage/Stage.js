@@ -38,7 +38,7 @@ class Stage extends Component {
 
     get activeContentId() {
         const matchProfile = matchPath(this.props.location.pathname, {
-            path: `citrineu/courses/:courseId/:stageId/:stepId`,
+            path: `/citrineu/courses/:courseId/:stageId/:stepId`,
         });
 
         return (matchProfile && matchProfile.params) ? matchProfile.params.stepId : '';

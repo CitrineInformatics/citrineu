@@ -12,7 +12,7 @@ class Section extends Component {
     }
 
     get parentPath() {
-        return `citrineu/linkmaster-documentation/${this.props.match.params.sectionId}`;
+        return `/citrineu/linkmaster-documentation/${this.props.match.params.sectionId}`;
     }
 
     generateDocumentComponents(documents) {
@@ -23,7 +23,7 @@ class Section extends Component {
 
     get activeContentId() {
         const matchProfile = matchPath(this.props.location.pathname, {
-            path: `citrineu/linkmaster-documentation/:sectionId/:docId`,
+            path: `/citrineu/linkmaster-documentation/:sectionId/:docId`,
         });
 
         return (matchProfile && matchProfile.params) ? matchProfile.params.docId : '';

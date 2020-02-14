@@ -9,7 +9,7 @@ class Step extends Component {
     }
 
     get parentPath() {
-        return `citrineu/courses/${this.props.match.params.courseId}/${this.props.match.params.stageId}`;
+        return `/citrineu/courses/${this.props.match.params.courseId}/${this.props.match.params.stageId}`;
     }
 
     render() {
