@@ -23,7 +23,7 @@ class Section extends Component {
 
     get activeContentId() {
         const matchProfile = matchPath(this.props.location.pathname, {
-            path: `/linkmaster-documentation/:sectionId/:docId`,
+            path: `citrineu/linkmaster-documentation/:sectionId/:docId`,
         });
 
         return (matchProfile && matchProfile.params) ? matchProfile.params.docId : '';
