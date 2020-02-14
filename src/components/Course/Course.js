@@ -47,7 +47,7 @@ class Course extends Component {
 
     get activeContentId() {
         const matchProfile = matchPath(this.props.location.pathname, {
-            path: `/courses/:courseId/:stageId`,
+            path: `citrineu/courses/:courseId/:stageId`,
         });
 
         return (matchProfile && matchProfile.params) ? matchProfile.params.stageId : this.state.stages[0].id;

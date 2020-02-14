@@ -14,7 +14,7 @@ class Documentation extends Component {
 
     get activeContentId() {
         const matchProfile = matchPath(this.props.location.pathname, {
-            path: `/linkmaster-documentation/:docId`,
+            path: `/citrineu/linkmaster-documentation/:docId`,
         });
 
         return (matchProfile && matchProfile.params) ? matchProfile.params.docId : null;
