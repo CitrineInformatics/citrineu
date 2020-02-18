@@ -184,7 +184,7 @@
 							"style": "value",
 							"type": "string",
 							"optional": true,
-							"description": "The Ingredient Amounts Spec Column should contain the spec'ed *amount* of each input material. The length of the list provided *must* match the length of the row's `INPUT MATERIALS UIDS: LinkMaster ID` list.\n\nThe detail provided after the colon allows you to specify the unit for an absolute quantity. Special allowed units for Ingredients are: `mass fraction`, `volume fraction`, and `number fraction`. More on these special units [here.](https://citrineinformatics.github.io/citrine-python/reference/citrine.resources.ingredient_spec.html)",
+							"description": "The Ingredient Amounts Spec Column should contain the spec'd *amount* of each input material. The length of the list provided *must* match the length of the row's `INPUT MATERIALS UIDS: LinkMaster ID` list.\n\nThe detail provided after the colon allows you to specify the unit for an absolute quantity. Special allowed units for Ingredients are: `mass fraction`, `volume fraction`, and `number fraction`. More on these special units [here.](https://citrineinformatics.github.io/citrine-python/reference/citrine.resources.ingredient_spec.html)",
                             "example": "INPUT MATERIALS UIDS: LinkMaster ID| INGREDIENT AMOUNTS SPEC: g|\n------------------------------|--------------------|\nbusiness_unit_389h_bd2b_93, business_unit_389h_b633_67| 5.5, 0.8|\n\nINPUT MATERIALS UIDS: LinkMaster ID|INGREDIENT AMOUNTS SPEC: mass fraction|\n------------------|--------------------------------|\n725892-v44f3-34t34f-45t45g4-rff43gf5f2, 423904790-grgf34r3-r432f42f42-3r23rf43f423| 0.25, 0.75|\n\nINPUT MATERIALS UIDS: LinkMaster ID| INGREDIENT AMOUNTS SPEC: kg|\n------------------|--------------------|\n725892-v44f3-34t34f-45t45g4-rff43gf5f2| 60"
 						},
 						{
@@ -402,7 +402,7 @@
 							"style": "list",
 							"type": "string",
 							"optional": true,
-							"description": "The Measurement Tags should contain tags you would like to associate with the the Measurement. Read more about tags [here](https://citrineinformatics.github.io/taurus-documentation/specification/tags/)",
+							"description": "The Measurement Tags should contain tags you would like to associate with the Measurement. Read more about tags [here](https://citrineinformatics.github.io/taurus-documentation/specification/tags/)",
 "example": "MEASUREMENT TAGS|\n---------------|\ndensity::Archimedes|"
 						},
 						{
@@ -466,7 +466,7 @@
                 {
                     "id": 1,
                     "title": "Real Values",
-                    "content":"There are three types of Real Values supported: Normal, Nominal and Uniform. All of these three types accept units. If you do not specify a unit, the value is assumed to be unitless.\n\nName| Normal Real\n-----|--------|\nSyntax| mean \u00b1 one standard deviation\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| 100.5 \u00b1 0.3\n\nName| Nominal Real\n-----|--------|\nSyntax| value\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| 100.5\n\nName| Uniform Real\n-----|--------|\nSyntax| [lower, upper]\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| [99.8, 100.3]\n\n"
+                    "content":"There are three types of Real Values supported: Normal, Nominal and Uniform. All of these three types accept units. If you do not specify a unit, the value is assumed to be unitless.\n\nName| Normal Real\n-----|--------|\nSyntax| mean \u00b1 one standard deviation\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| 100.5 \u00b1 0.3\nExample Value| 100.5 +- 0.3\n\nName| Nominal Real\n-----|--------|\nSyntax| value\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| 100.5\n\nName| Uniform Real\n-----|--------|\nSyntax| [lower, upper]\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| [99.8, 100.3]\n\n"
                 },
                 {
                     "id": 2,
