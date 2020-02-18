@@ -15,7 +15,7 @@ class Card extends Component {
                         id={this.props.content.id} 
                         path={this.props.path} 
                         title={this.props.content.title}
-                        type={this.props.content.resource_type}
+                        type={this.props.content.step_type}
                         length={this.props.content.length}
                         />
                     <CardContent 

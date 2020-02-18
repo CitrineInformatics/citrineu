@@ -17,7 +17,7 @@ class Documentation extends Component {
             path: `/citrineu/linkmaster-documentation/:docId`,
         });
 
-        return (matchProfile && matchProfile.params) ? matchProfile.params.docId : null;
+        return (matchProfile && matchProfile.params) ? matchProfile.params.docId : 0;
     }
 
     getRoute(documentation, path) {

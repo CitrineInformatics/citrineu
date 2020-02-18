@@ -1,28 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch, matchPath } from "react-router-dom";
-import Step from '../Step/Step';
-import data from '../../dummyData.json';
 import Card from '../Card/Card';
+import Loading from '../Loading/Loading';
 
 class Stage extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            resources: []
-        }
-
-        this.url = "https://citrineu.herokuapp.com/api"
-        this.url2 = "http://localhost:5000/api"
-    }
-
-    // componentDidMount() {
-    //     // In reality, I'll be fetching from the API here, but importing dummy data from json file for now.
-
-    //     fetch(`${this.url2}/v1/stages/${this.props.match.params.stageId}`)
-    //         .then(response => response.json())
-    //         .then(data => this.setState({ resources: data.resources }));
-    // }
 
     generateStepComponents = (steps) => {
         return steps.map(step => 
@@ -46,20 +27,22 @@ class Stage extends Component {
 
     render() {
         const stage = this.props.stages.find(stage => stage.id == this.props.match.params.stageId);
-        
+        const stepIds = stage.steps;
+        const steps = this.props.steps.filter(step => stepIds.includes(step.id.toString())) 
+
         return (
             <div>
 {
-                stage !== undefined
+                steps
                 ?<div className="module per100">
                     <h2 className="titlecase mbm">{ stage.title }</h2>
                     <p className="large">{ stage.description }</p>
 
                     <div className="container">
-                        { this.generateStepComponents(stage.steps) }
+                        { this.generateStepComponents(steps) }
                     </div>
                 </div>
-                : <div>loading....</div>
+                : <Loading />
             }
             </div>
             
