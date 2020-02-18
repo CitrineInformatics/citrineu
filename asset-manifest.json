@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/citrineu/static/css/main.e5be83b3.chunk.css",
-    "main.js": "/citrineu/static/js/main.988e6b02.chunk.js",
-    "main.js.map": "/citrineu/static/js/main.988e6b02.chunk.js.map",
+    "main.js": "/citrineu/static/js/main.175c327a.chunk.js",
+    "main.js.map": "/citrineu/static/js/main.175c327a.chunk.js.map",
     "runtime-main.js": "/citrineu/static/js/runtime-main.d64103d9.js",
     "runtime-main.js.map": "/citrineu/static/js/runtime-main.d64103d9.js.map",
-    "static/js/2.0815dded.chunk.js": "/citrineu/static/js/2.0815dded.chunk.js",
-    "static/js/2.0815dded.chunk.js.map": "/citrineu/static/js/2.0815dded.chunk.js.map",
+    "static/js/2.f9d4cf60.chunk.js": "/citrineu/static/js/2.f9d4cf60.chunk.js",
+    "static/js/2.f9d4cf60.chunk.js.map": "/citrineu/static/js/2.f9d4cf60.chunk.js.map",
     "index.html": "/citrineu/index.html",
-    "precache-manifest.b3448d24cf49eff807985ddca566b63d.js": "/citrineu/precache-manifest.b3448d24cf49eff807985ddca566b63d.js",
+    "precache-manifest.5f1c8d6cb2a25529aafa43ac7b68837d.js": "/citrineu/precache-manifest.5f1c8d6cb2a25529aafa43ac7b68837d.js",
     "service-worker.js": "/citrineu/service-worker.js",
     "static/css/main.e5be83b3.chunk.css.map": "/citrineu/static/css/main.e5be83b3.chunk.css.map",
     "static/media/App.scss": "/citrineu/static/media/banner.2c818b7e.png",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d64103d9.js",
-    "static/js/2.0815dded.chunk.js",
+    "static/js/2.f9d4cf60.chunk.js",
     "static/css/main.e5be83b3.chunk.css",
-    "static/js/main.988e6b02.chunk.js"
+    "static/js/main.175c327a.chunk.js"
   ]
 }
