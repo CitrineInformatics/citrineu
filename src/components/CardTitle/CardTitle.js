@@ -18,7 +18,7 @@ class CardTitle extends Component {
                         <Link to={`${this.props.path}/${this.props.id}`}>{ this.props.title }</Link>
                     </div>
                     <div className="module lowercase self-align-right">
-                        { this.props.length } min
+                        { this.props.length !== undefined ? `${this.props.length} min` : '' }
                     </div>
                 </div>
             </div>

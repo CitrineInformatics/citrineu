@@ -8,7 +8,8 @@ class Stage extends Component {
     generateStepComponents = (steps) => {
         return steps.map(step => 
             <div className="module p100 mtm">
-                <Card 
+                <Card
+                    type={step.step_type} 
                     content={step} 
                     buttonText="Begin Step"
                     buttonTheme="light" 

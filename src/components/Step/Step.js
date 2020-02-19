@@ -26,10 +26,9 @@ class Step extends Component {
                         <h2 className="mbm">{ step.title }</h2>
 
                         {
-                            step.type == 'video'
-                            ?   <video width="100%" controls="controls" autoPlay="false">
-                                    <source src={ step.content }/>
-                                </video>
+                            step.step_type == 'video'
+                            ? 
+                            <iframe src={step.content} width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                             : <Markdown source={ step.content }/>
                         }                   
                     </div>

@@ -52,10 +52,11 @@ class Courses extends Component {
                                         resources.map(course => 
                                             <div className="module p33 ps">
                                                 <div className="container">
-                                                    <Card 
+                                                    <Card
+                                                        type="course" 
                                                         key={course.id}
                                                         content={course}
-                                                        path="/courses" 
+                                                        path="/citrineu/courses" 
                                                         buttonText="Begin Course"
                                                         buttonTheme="light" 
                                                         visible="true"/>

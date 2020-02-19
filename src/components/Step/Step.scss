@@ -1,16 +1,9 @@
-.stage-tray {
-    box-shadow: 1px 1px 5px #bbb;
-    background-color: white;
-    border-radius: $border-radius;
-    font-family: $heading-font;
-    text-transform: uppercase;
+iframe {
+    width: 100%;
+
+    #player, .player {
+        position: absolute;
+        top: 0;
+    }
 }
 
-.stage-tray::before {
-    content: "";
-    width: 0; 
-    height: 0; 
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent; 
-    border-right:10px solid white;
-}
