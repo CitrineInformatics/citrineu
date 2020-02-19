@@ -16,3 +16,14 @@
 .card-title.topic-programming {
     background-color: $accent-color3;
 }
+
+@media (max-width: 768px) {
+	.card-title, #cardTitle {
+        padding: $small;
+        margin-bottom: 0;
+        
+        .module {
+            margin-bottom: 0;
+        }
+    }
+}

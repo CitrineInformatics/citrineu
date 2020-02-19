@@ -22,9 +22,8 @@ class Step extends Component {
 
                 step
                 ? <div className="container">
-                    <div className="module p70 step prl">
+                    <div className="module p70 step prl mob-order-2">
                         <h2 className="mbm">{ step.title }</h2>
-
                         {
                             step.step_type == 'video'
                             ? 
@@ -33,7 +32,7 @@ class Step extends Component {
                         }                   
                     </div>
 
-                    <div className="module p30">
+                    <div className="module p30 mob-order-1">
                         <span className="heading bold large mbs">In this Section</span>
                         <VerticalNavigation 
                             theme="compact"

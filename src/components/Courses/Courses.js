@@ -1,8 +1,6 @@
 import React , { Component } from 'react';
-import FilterBy from '../FilterBy/FilterBy';
 import Card from '../Card/Card';
 import Course from '../Course/Course';
-import data from '../../dummyData.json';
 import Loading from '../Loading/Loading';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
@@ -17,7 +15,6 @@ class Courses extends Component {
         }
 
         this.url = "https://citrineu.herokuapp.com/api"
-        this.url2 = "http://localhost:5000/api"
     }
 
     componentDidMount() {

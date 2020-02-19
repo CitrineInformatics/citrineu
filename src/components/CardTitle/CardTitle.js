@@ -9,15 +9,15 @@ class CardTitle extends Component {
 
     render() {
         return (
-            <div className="module p100 pxs pls prs bold card-title">
+            <div className="module p100 p100-mob pxs pls prs bold card-title" id="cardTitle">
                 <div className="container">
-                    <div className="module mrs">
+                    <div className="module no-collapse mr">
                         <Icon style={this.props.type} />
                     </div>
-                    <div className="module">
+                    <div className="module no-collapse">
                         <Link to={`${this.props.path}/${this.props.id}`}>{ this.props.title }</Link>
                     </div>
-                    <div className="module lowercase self-align-right">
+                    <div className="module no-collapse lowercase self-align-right">
                         { this.props.length !== undefined ? `${this.props.length} min` : '' }
                     </div>
                 </div>

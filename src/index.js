@@ -26,7 +26,7 @@ ReactDOM.render(
                         <Logo />
                     </div>
 
-                    <div className="module self-align-right horizontal-navigation">
+                    <div className="module self-align-right horizontal-navigation mob-text-center">
                         <HorizontalNavigation navItems={navItems}/>
                     </div>
                 </div>

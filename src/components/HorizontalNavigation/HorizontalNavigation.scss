@@ -2,3 +2,9 @@
     font-family: $heading-font;
     text-transform: uppercase;
 }
+
+@media(max-width: 768px) {
+    .horizontal-navigation .module {
+        margin-bottom: 15px;
+    }
+}

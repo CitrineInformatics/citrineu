@@ -682,7 +682,19 @@ button,
 	.per70.no-collapse,
 	.per75.no-collapse,
 	.per80.no-collapse,
-	.per90.no-collapse {
+	.per90.no-collapse,
+	.p10.no-collapse,
+	.p20.no-collapse,
+	.p25.no-collapse, 
+	.p30.no-collapse,
+	.p40.no-collapse,
+	.p50.no-collapse,
+	.p60.no-collapse,
+	.p70.no-collapse,
+	.p75.no-collapse,
+	.p80.no-collapse,
+	.p90.no-collapse,
+	.module.no-collapse {
 		width: initial;
 	}
 	
@@ -805,8 +817,7 @@ button,
 	}
 	
 	.container,
-	.module-container,
-	.container-extender {
+	.module-container {
 		width: 95%;
 		margin: 0 auto;
 	}
@@ -818,6 +829,8 @@ button,
 	.module:last-of-type {
 		margin-bottom: 0;
 	}
+
+
 	
 	.module,
 	.per10,
@@ -992,22 +1005,26 @@ button,
 	.text-right {
 		text-align: center;
 	}
+
+	.mob-text-center {
+		text-align: center;
+	}
 	
-	.module,
-	body :not(.p10-mob)
-	:not(.p20-mob)
-	:not(.p25-mob)
-	:not(.p30-mob)
-	:not(.p33-mob)
-	:not(.p40-mob)
-	:not(.p50-mob)
-	:not(.p60-mob)
-	:not(.p66-mob)
-	:not(.p70-mob)
-	:not(.p75-mob)
-	:not(.p80-mob)
-	:not(.p90-mob)
-	:not(.p100-mob) {
+	// .module,
+	// body :not(.p10-mob)
+	// :not(.p20-mob)
+	// :not(.p25-mob)
+	// :not(.p30-mob)
+	// :not(.p33-mob)
+	// :not(.p40-mob)
+	// :not(.p50-mob)
+	// :not(.p60-mob)
+	// :not(.p66-mob)
+	// :not(.p70-mob)
+	// :not(.p75-mob)
+	// :not(.p80-mob)
+	// :not(.p90-mob)
+	// :not(.p100-mob) {
 		.padding-left-mini, .plxs,
 		.padding-left-small, .pls,
 		.padding-left-medium, .plm,
@@ -1029,6 +1046,12 @@ button,
 		.margin-right {
 			margin-right: 0;
 		}	
+	//}
+
+	.module.no-collapse {
+		padding-left: initial;
+		padding-right: initial;
 	}
+		
 }
 
