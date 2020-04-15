@@ -12,13 +12,8 @@
 					"title": "Basic File Structure",
 					"content": "The LinkMaster Framework has been designed to store information about materials, how they were made, and their properties.\n\nThis can be done by using recognized keywords in the column headers, and entering data into those columns.\nThis Framework heavily parallels [GEMD](https://citrineinformatics.github.io/citrine-python/getting_started/data_model.html), Citrine's data model.\n\nA LinkMaster File is an Excel workbook where each Process or Measurement is represented in different sheet (tab) within the workbook.\nThe cells in the first row of each sheet contain header names, and the cells in the subsequent rows contain information regarding that Process or Measurement that corresponds with the column headers. "
 				},
-				{
-					"id": 2,
-					"title": "Example File",
-					"content": "To see an example file, please click [here](https://github.com/CitrineInformatics/citrineu/blob/master/content/Book1.xlsx)."
-                },
                 {
-                    "id": 3,
+                    "id": 2,
                     "title": "Known Limitations",
                     "content": "Currently there is no way to associate multiple Process Run or Measurement Runs to the same Process Spec or Measurement Spec, respectively. *The LinkMaster framework always assumes a 1:1 relationship between Run and Spec.*\n\nOnly Run Objects can hold Notes, File Links, UIDs, and Attribute Origin.\n\nNames and Tags are shared between Runs and Specs for all Objects and Names are shared for Attributes between Specs and Runs.\n\n[MaterialSpec](https://citrineinformatics.github.io/citrine-python/reference/citrine.resources.material_spec.html#citrine.resources.material_spec.MaterialSpec) objects cannot store any attribute information. \n\nYou cannot link files to Ingredients."
                 }
@@ -36,22 +31,22 @@
 				},
 				{
 					"id": 2,
-					"title": "Allowed *only* in Processes",
+					"title": "Allowed Only in Processes",
 					"content": "- INPUT MATERIALS UIDS: LinkMaster ID (special)\n- INGREDIENT AMOUNTS SPEC: unit or type\n- INGREDIENT AMOUNTS RUN: unit or type\n- INGREDIENT LABELS\n- INGREDIENT NAMES\n- PROCESS NAME\n- PROCESS TEMPLATE: custom uid name or \"id\" (default)\n- PROCESS FILE LINKS\n- PROCESS NOTES\n- PROCESS TAGS\n- PROCESS DATE\n- PROCESS OPERATOR\n- PROCESS UID: custom uid name\n- OUTPUT MATERIAL UID: custom uid name\n- OUTPUT MATERIAL NAME\n- OUTPUT MATERIAL TEMPLATE: custom uid name or \"id\" (default)\n- OUTPUT MATERIAL TAGS\n- OUTPUT MATERIAL NOTES\n- OUTPUT MATERIAL TYPE\n- OUTPUT MATERIAL FILE LINKS\n"
 				},
 				{
 					"id": 3,
-					"title": "Allowed *only* in Measurements",
+					"title": "Allowed Only in Measurements",
 					"content": "- INPUT MATERIAL UID: LinkMaster ID (special)\n- MEASUREMENT NAME\n- MEASUREMENT TEMPLATE: custom uid name or \"id\" (default)\n- MEASUREMENT FILE LINKS\n- MEASUREMENT NOTES\n- MEASUREMENT TAGS\n- MEASUREMENT DATE\n- MEASUREMENT OPERATOR\n- MEASUREMENT UID: custom uid name\n- PROPERTY TEMPLATE: custom uid name or \"id\" (default)\n- PROPERTY NAME\n- PROPERTY NOTES\n- PROPERTY FILE LINKS\n- PROPERTY ORIGIN\n- PROPERTY VALUE RUN: unit or type\n"
 				},
 				{
 					"id": 4,
-					"title": "Allowed in *both* Processes and Measurements",
+					"title": "Allowed in Both Processes and Measurements",
 					"content": "- PARAMETER NAME\n- PARAMETER TEMPLATE: custom uid name or \"id\" (default)\n- PARAMETER NOTES\n- PARAMETER FILE LINKS \n- PARAMETER ORIGIN \n- PARAMETER VALUE SPEC: unit or type\n- PARAMETER VALUE RUN: unit or type\n- CONDITION NAME\n- CONDITION TEMPLATE: custom uid name or \"id\" (default)\n- CONDITION NOTES\n- CONDITION FILE LINKS\n- CONDITION ORIGIN\n- CONDITION VALUE SPEC: unit or type\n- CONDITION VALUE RUN: unit or type\n"
 				},
 				{
 					"id": 5,
-                    "title": "Keyword Details",
+                    "title": "Keyword Details & Examples",
                     "content": "Below are the details for each recognized keyword that can be used in a column header.",
 					"arguments": [
                         {
@@ -466,12 +461,12 @@
                 {
                     "id": 1,
                     "title": "Real Values",
-                    "content":"There are three types of Real Values supported: Normal, Nominal and Uniform. All of these three types accept units. If you do not specify a unit, the value is assumed to be unitless.\n\nName| Normal Real\n-----|--------|\nSyntax| mean \u00b1 one standard deviation\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| 100.5 \u00b1 0.3\nExample Value| 100.5 +- 0.3\n\nName| Nominal Real\n-----|--------|\nSyntax| value\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| 100.5\n\nName| Uniform Real\n-----|--------|\nSyntax| [lower, upper]\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| [99.8, 100.3]\n\n"
+                    "content":"There are three types of Real Values supported: Normal, Nominal and Uniform. All of these three types accept units. If you do not specify a unit, the value is assumed to be unitless.\n\nName| Normal Real\n-----|--------|\nSyntax| mean \u00b1 one standard deviation\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| 100.5 \u00b1 0.3\nExample Value| 100.5 +- 0.3\n\nName| Nominal Real\n-----|--------|\nSyntax| value\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| 100.5\n\nName| Uniform Real\n-----|--------|\nSyntax| &#91;lower, upper&#93;\nExample header| PARAMETER VALUE SPEC: degC\nExample Value| &#91;99.8, 100.3&#93;\n\n"
                 },
                 {
                     "id": 2,
                     "title": "Integer Values",
-                    "content":"There are two types of [Integer Values](https://citrineinformatics.github.io/taurus-documentation/specification/value-types/#integer-values) supported: Nominal and Uniform. Integer values are always unitless, and the type `integer` should be provided. Note that `integer` values cannot be used when defining ingredient amounts because ingredient amounts must be continuous values on the Citrine Platform.\n\nName| Nominal Integer\n-----|--------|\nSyntax| value\nExample header| PARAMETER VALUE SPEC: integer\nExample Value| 7\n\nName| Uniform Integer\n-----|--------|\nSyntax| [lower, upper]\nExample header| PARAMETER VALUE SPEC: integer\nExample Value| [3,8]"
+                    "content":"There are two types of [Integer Values](https://citrineinformatics.github.io/taurus-documentation/specification/value-types/#integer-values) supported: Nominal and Uniform. Integer values are always unitless, and the type `integer` should be provided. Note that `integer` values cannot be used when defining ingredient amounts because ingredient amounts must be continuous values on the Citrine Platform.\n\nName| Nominal Integer\n-----|--------|\nSyntax| value\nExample header| PARAMETER VALUE SPEC: integer\nExample Value| 7\n\nName| Uniform Integer\n-----|--------|\nSyntax| &#91;lower, upper&#93;\nExample header| PARAMETER VALUE SPEC: integer\nExample Value| &#91;3,8&#93;"
                 },
                 {
                     "id": 3,
@@ -482,6 +477,11 @@
                     "id": 4,
                     "title": "Formula Values",
                     "content":"LinkMaster Framework can accept an Empirical Formula. These values should have the type `formula`\n\nName| Empirical Formula\n-----|--------|\nSyntax| formula\nExample header| PROPERTY VALUE SPEC: formula\nExample Value| SiO2"
+				},
+				{
+                    "id": 5,
+                    "title": "Compositional Values",
+                    "content":"A composition represented as a map from the component name to the quantity. The quantities do not express an uncertainty, but also do not imply that there is absolute certainty in their values. For each component of the compositional makeup, the name is provided in quotation marks followed by a colon and its relative amount. Units can be defined in the attribute Template. Different components are separated by commas, within curly brackets:\n\n| **Name** | **Nominal Composition** |\n| --- | --- |\n| Syntax | {&quot;component name&quot; : component value, …} |\n| Example header | PARAMETER VALUE SPEC: Compositional |\n| Example Value | {&#39;component1&#39;: 0.7, &#39;component2&#39;: 0.2, &#39;component3&#39;: 0.1} |"
                 }
             ]
         },
