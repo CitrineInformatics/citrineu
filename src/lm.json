@@ -63,7 +63,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": true,
-							"description": "The Parameter Template should contain a unique ID of the Parameter's Template. If this column is not present or if the field is empty, the Parameter is assumed to not have a Parameter Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UUID.",
+							"description": "The Parameter Template should contain a unique ID of the Parameter's Template. If this column is not present or if the field is empty, the Parameter is assumed to not have a Parameter Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UUID.",
                             "example": "PARAMETER TEMPLATE: my cool id|\n------------------------------|\nbusiness_unit_389h_bd2b_93|\n\nPARAMETER TEMPLATE|\n------------------|\n725892-v44f3-34t34f-45t45g4|"
 						},
 						{
@@ -121,7 +121,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": true,
-							"description": "The Condition Template should contain a unique ID of the Condition's Template. If this column is not present or if the field is empty, the Condition is assumed to not have a Condition Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UUID.",
+							"description": "The Condition Template should contain a unique ID of the Condition's Template. If this column is not present or if the field is empty, the Condition is assumed to not have a Condition Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UUID.",
                             "example": "CONDITION TEMPLATE: my cool id|\n------------------------------|\nbusiness_unit_389h_bd2b_93|\n\nCONDITION TEMPLATE|\n------------------|\n725892-v44f3-34t34f-45t45g4|"
 						},
 						{
@@ -219,7 +219,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": true,
-							"description": "The Process Template should contain the unique ID of the Process's Template. If this column is not present or if the field is empty, the Process is assumed to not have a Process Template.  The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UUID.",
+							"description": "The Process Template should contain the unique ID of the Process's Template. If this column is not present or if the field is empty, the Process is assumed to not have a Process Template.  The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UUID.",
 "example": "PROCESS TEMPLATE: my cool id|\n------------------------------|\nbusiness_unit_389h_bd2b_93|\n\nPROCESS TEMPLATE|\n------------------|\n725892-v44f3-34t34f-45t45g4|"
 						},
 						{
@@ -227,7 +227,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": true,
-                            "description": "The Process UID Column should contain the Unique ID of the Process. The detail provided after the colon allows you to specify *which* unique ID to reference (the scope). You can read more about UID scopes [here](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/).", 
+                            "description": "The Process UID Column should contain the Unique ID of the Process. The detail provided after the colon allows you to specify *which* unique ID to reference (the scope). You can read more about UID scopes [here](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/).", 
                             "notes":"Note that you cannot use the scope of `id` here, as this is reserved for the Citrine Platform. Multiple Process UID columns can be specified, but each must have a different UID name (scope).",
 "example": "PROCESS UID: my cool id|\n------------------------------|\nbusiness_unit_389h_bd2b_93|"
 						},
@@ -253,7 +253,7 @@
 							"style": "list",
 							"type": "string",
 							"optional": true,
-							"description": "The Process Tags should contain tags you would like to associate with the Process. Read more about tags [here.](https://citrineinformatics.github.io/taurus-documentation/specification/tags/)",
+							"description": "The Process Tags should contain tags you would like to associate with the Process. Read more about tags [here.](https://citrineinformatics.github.io/gemd-docs/specification/tags/)",
 "example": "PROCESS TAGS|\n---------------|\noven_firing::BlueM, oven_firing::dry|"
 						},
 						{
@@ -277,7 +277,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": false,
-                            "description": "The `Output Material UID` Column should contain the Unique ID of the Material produced from the Process described in that Process Tab. This is one of the *required* columns for a Process. The detail provided after the colon allows you to specify *which* unique ID to reference (the scope). You **must** have one `Output Material UID` column with the `scope` of `LinkMaster ID` in every Process Tab. You can assign the output Material Run a custom UID by supplying additional `Output Material UID` columns with different `scopes`. You can read more about UID scopes [here](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/).", "notes": "You cannot use the scope of `id` here, as this is reserved for the Citrine Platform. Multiple Output Material UID columns can be specified, but each must have a different UID scope (detail).",
+                            "description": "The `Output Material UID` Column should contain the Unique ID of the Material produced from the Process described in that Process Tab. This is one of the *required* columns for a Process. The detail provided after the colon allows you to specify *which* unique ID to reference (the scope). You **must** have one `Output Material UID` column with the `scope` of `LinkMaster ID` in every Process Tab. You can assign the output Material Run a custom UID by supplying additional `Output Material UID` columns with different `scopes`. You can read more about UID scopes [here](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/).", "notes": "You cannot use the scope of `id` here, as this is reserved for the Citrine Platform. Multiple Output Material UID columns can be specified, but each must have a different UID scope (detail).",
                             "example": "OUTPUT MATERIAL UID: LinkMaster ID|\n------------------------------|\nbusiness_unit_389h_bd2b_93|\n\nOUTPUT MATERIAL UID: LinkMaster ID| OUTPUT MATERIAL UID: my custom scope name\n------------------------------|---------------------------|\nbusiness_unit_389h_bd2b_93 | cookie_7b87209f09f|"
 						},
 						{
@@ -285,7 +285,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": true,
-							"description": "The `Output Material Template` column should contain the unique ID of the Output Material's Material Template. If this column is not present or if the field is empty, the output  Material is assumed to not have a Material Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UID.",
+							"description": "The `Output Material Template` column should contain the unique ID of the Output Material's Material Template. If this column is not present or if the field is empty, the output  Material is assumed to not have a Material Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UID.",
                             "example": "OUTPUT MATERIAL TEMPLATE: custom material template id name|\n------------------------------|\nbusiness_unit_389h_bd2b_93|\n\nOUTPUT MATERIAL TEMPLATE|\n------------------|\n725892-v44f3-34t34f-45t45g4|"
 						},
 						{
@@ -301,7 +301,7 @@
 							"style": "list",
 							"type": "string",
 							"optional": true,
-							"description": "The Output Material Tags should contain tags you would like to associate with the Output Material. Read more about tags [here](https://citrineinformatics.github.io/taurus-documentation/specification/tags/)",
+							"description": "The Output Material Tags should contain tags you would like to associate with the Output Material. Read more about tags [here](https://citrineinformatics.github.io/gemd-docs/specification/tags/)",
 "example": "OUTPUT MATERIAL TAGS|\n---------------|\nSalt::NaCl, Sodium_Chloride|"
 						},
 						{
@@ -333,7 +333,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": false,
-							"description": "The Input Material UID column should contain the unique LinkMaster ID of the Material entering a Measurement. [For denoting Materials in a Process, please see](#input-materials-uids-linkmaster-id). This is one of the *required* columns for a Measurement. The `scope` **must** be `LinkMaster ID` for this column. You can read more about UID scopes [here](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/).",
+							"description": "The Input Material UID column should contain the unique LinkMaster ID of the Material entering a Measurement. [For denoting Materials in a Process, please see](#input-materials-uids-linkmaster-id). This is one of the *required* columns for a Measurement. The `scope` **must** be `LinkMaster ID` for this column. You can read more about UID scopes [here](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/).",
 "example": "INPUT MATERIAL UID: LinkMaster ID|\n------------------------------|\nbusiness_unit_389h_bd2b_93|"
 						},
 						{
@@ -349,7 +349,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": true,
-							"description": "The Measurement Template column should contain the unique ID of the Measurement's Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UID.",
+							"description": "The Measurement Template column should contain the unique ID of the Measurement's Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UID.",
 "example": "MEASUREMENT TEMPLATE: my cool id|\n------------------------------|\nbusiness_unit_389h_bd2b_93|\n\nMEASUREMENT TEMPLATE|\n------------------|\n725892-v44f3-34t34f-45t45g4|"
 						},
 						{
@@ -373,7 +373,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": true,
-							"description": "The Measurement UID Column should contain the Unique ID of the Measurement. The detail provided after the colon allows you to specify *which* unique ID to reference (the scope). You can read more about UID scopes [here](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/). Note that you cannot use the scope of `id` here, as this is reserved for the Citrine Platform. Multiple Measurement UID columns can be specified, but each must have a different UID name (scope).",
+							"description": "The Measurement UID Column should contain the Unique ID of the Measurement. The detail provided after the colon allows you to specify *which* unique ID to reference (the scope). You can read more about UID scopes [here](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/). Note that you cannot use the scope of `id` here, as this is reserved for the Citrine Platform. Multiple Measurement UID columns can be specified, but each must have a different UID name (scope).",
 "example": "MEASUREMENT UID: my cool id|\n------------------------------|\nbusiness_unit_389h_bd2b_93"
 						},
 						{
@@ -397,7 +397,7 @@
 							"style": "list",
 							"type": "string",
 							"optional": true,
-							"description": "The Measurement Tags should contain tags you would like to associate with the Measurement. Read more about tags [here](https://citrineinformatics.github.io/taurus-documentation/specification/tags/)",
+							"description": "The Measurement Tags should contain tags you would like to associate with the Measurement. Read more about tags [here](https://citrineinformatics.github.io/gemd-docs/specification/tags/)",
 "example": "MEASUREMENT TAGS|\n---------------|\ndensity::Archimedes|"
 						},
 						{
@@ -413,7 +413,7 @@
 							"style": "string",
 							"type": "string",
 							"optional": true,
-							"description": "The Property Template should contain a unique ID of the Property's Template. If this column is not present or if the field is empty, the Property is assumed to not have a Property Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UUID.",
+							"description": "The Property Template should contain a unique ID of the Property's Template. If this column is not present or if the field is empty, the Property is assumed to not have a Property Template. The detail provided after the colon allows you to specify [*which* unique ID to reference (the scope)](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/); if nothing is provided here it defaults to the Citrine Platform UUID.",
 "example": "PROPERTY TEMPLATE: my cool id|\n------------------------------|\nbusiness_unit_389h_bd2b_93|\n\nPROPERTY TEMPLATE|\n------------------|\n725892-v44f3-34t34f-45t45g4"
 						},
 						{
@@ -456,7 +456,7 @@
         {
             "id": 4,
             "title": "Value Types",
-            "description":"Value types are sometimes inferred and sometimes specified. [You can learn more about all of the different Value types we support on the Citrine Platform here](https://citrineinformatics.github.io/taurus-documentation/specification/value-types/). Ingredients have special allowed units. [See the details on Ingredient Amounts columns for more information](#ingredient-amounts-spec-unit-or-type).",
+            "description":"Value types are sometimes inferred and sometimes specified. [You can learn more about all of the different Value types we support on the Citrine Platform here](https://citrineinformatics.github.io/gemd-docs/specification/value-types/). Ingredients have special allowed units. [See the details on Ingredient Amounts columns for more information](#ingredient-amounts-spec-unit-or-type).",
             "documents": [
                 {
                     "id": 1,
@@ -466,7 +466,7 @@
                 {
                     "id": 2,
                     "title": "Integer Values",
-                    "content":"There are two types of [Integer Values](https://citrineinformatics.github.io/taurus-documentation/specification/value-types/#integer-values) supported: Nominal and Uniform. Integer values are always unitless, and the type `integer` should be provided. Note that `integer` values cannot be used when defining ingredient amounts because ingredient amounts must be continuous values on the Citrine Platform.\n\nName| Nominal Integer\n-----|--------|\nSyntax| value\nExample header| PARAMETER VALUE SPEC: integer\nExample Value| 7\n\nName| Uniform Integer\n-----|--------|\nSyntax| &#91;lower, upper&#93;\nExample header| PARAMETER VALUE SPEC: integer\nExample Value| &#91;3,8&#93;"
+                    "content":"There are two types of [Integer Values](https://citrineinformatics.github.io/gemd-docs/specification/value-types/#integer-values) supported: Nominal and Uniform. Integer values are always unitless, and the type `integer` should be provided. Note that `integer` values cannot be used when defining ingredient amounts because ingredient amounts must be continuous values on the Citrine Platform.\n\nName| Nominal Integer\n-----|--------|\nSyntax| value\nExample header| PARAMETER VALUE SPEC: integer\nExample Value| 7\n\nName| Uniform Integer\n-----|--------|\nSyntax| &#91;lower, upper&#93;\nExample header| PARAMETER VALUE SPEC: integer\nExample Value| &#91;3,8&#93;"
                 },
                 {
                     "id": 3,
@@ -506,7 +506,7 @@
                 {
                     "id": 5,
                     "title": "Reserved or Special UID Scopes",
-                    "content": "Scopes allow you to say _which_ unique identifier (UID) you are referring to. [You can read more about scopes here](https://citrineinformatics.github.io/taurus-documentation/specification/unique-identifiers/). There are two special UID scopes: `id` and `LinkMaster ID`.\n\n`id` is the UID scope that Citrine reserves as our platform's object identifier. Because of this, `id` can only be used when referring to a Template. You cannot *assign* a UID with the `id` scope using LinkMaster, you can only _reference_ an _existing_ object using the `id` scope. Thus, this scope can only be used to reference an existing Template in the LinkMaster Framework.\n\n`LinkMaster ID` is the identifier scope used for ingesting your LinkMaster file, and is thus special. These UIDs are the source of the links between the different tabs of your file. As such, the column headers `INPUT MATERIALS UIDS: LinkMaster ID` and `OUTPUT MATERIAL UID: LinkMaster ID` in Process tabs, and the column header `INPUT MATERIAL UID: LinkMaster ID` in Measurement tabs are very important columns. They are described in more detail below."
+                    "content": "Scopes allow you to say _which_ unique identifier (UID) you are referring to. [You can read more about scopes here](https://citrineinformatics.github.io/gemd-docs/specification/unique-identifiers/). There are two special UID scopes: `id` and `LinkMaster ID`.\n\n`id` is the UID scope that Citrine reserves as our platform's object identifier. Because of this, `id` can only be used when referring to a Template. You cannot *assign* a UID with the `id` scope using LinkMaster, you can only _reference_ an _existing_ object using the `id` scope. Thus, this scope can only be used to reference an existing Template in the LinkMaster Framework.\n\n`LinkMaster ID` is the identifier scope used for ingesting your LinkMaster file, and is thus special. These UIDs are the source of the links between the different tabs of your file. As such, the column headers `INPUT MATERIALS UIDS: LinkMaster ID` and `OUTPUT MATERIAL UID: LinkMaster ID` in Process tabs, and the column header `INPUT MATERIAL UID: LinkMaster ID` in Measurement tabs are very important columns. They are described in more detail below."
                 }
 			]
 		}
